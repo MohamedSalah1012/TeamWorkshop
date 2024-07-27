@@ -9,8 +9,6 @@ public class NewRegister {
     WebDriver driver;
 
 
-
-
     @Test( testName = "New Register")
     public void sliderIsVisible(){
         new HomePage(driver)
