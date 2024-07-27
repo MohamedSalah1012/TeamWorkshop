@@ -20,6 +20,8 @@ public class HomePage {
 
     private final By silder = By.xpath("(//div[@class='carousel-inner'])[1]");
 
+    private final By loggedInAsLabel = By.xpath("//li//a[contains(text(),' Logged in as ')]");
+
 
     public HomePage silderIsVisible(){
         ActionBot.isVisible(driver,silder);
@@ -30,5 +32,10 @@ public class HomePage {
     public Login clickOnSignupLinkButton(){
         ActionBot.clicking(driver, signUpLink);
         return  new Login(driver);
+    }
+
+    public HomePage verifyLoggedInLabelIsVisible(){
+        ActionBot.isVisible(driver , loggedInAsLabel);
+        return new HomePage(driver);
     }
 }
