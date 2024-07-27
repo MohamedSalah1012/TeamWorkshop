@@ -4,11 +4,11 @@ import Bots.ActionBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AccountCreated {
+public class AccountCreatedPage {
 
     private final WebDriver driver;
 
-    public AccountCreated(WebDriver driver) {
+    public AccountCreatedPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -21,13 +21,13 @@ public class AccountCreated {
 
 
                     /////////// Methods ////////////
-    public AccountCreated  accountCreatedHeaderisVisible(){
+    public AccountCreatedPage accountCreatedHeaderisVisible(){
         ActionBot.isVisible(driver ,accountCreatedHeader);
-        return new AccountCreated(driver);
+        return new AccountCreatedPage(driver);
     }
 
-    public AccountCreated  clickContinueButton(){
+    public AccountCreatedPage clickContinueButton(){
         ActionBot.clicking(driver ,continueButton);
-        return new AccountCreated(driver);
+        return new AccountCreatedPage(driver);
     }
 }

@@ -15,29 +15,35 @@ public class NewRegister {
         new HomePage(driver)
                 .silderIsVisible()
                 .clickOnSignupLinkButton();
-        new Login(driver)
+
+        new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("new1" , "new1@user1.com" );
+                .fillUserSignUpFrom("new2" , "new2@user1.com" );
+
         new SignUpPage(driver)
                 .signUpFormLabelIsVisible()
-                .selectGender("Mrs")
-                .enterPassoword("12345678")
+                .selectGender("Mr")
+                .enterPassword("12345678")
                 .checkNewsLetterCheckBox()
                 .checkReceiveSpecialOfferCheckBox()
-                .enterFirstName("Mohamed")
-                .enterLastName("Salah")
-                .enterCompany("ourteam")
+                .enterFirstName("mohamed")
+                .enterLastName("salah")
+                .enterCompany("ourcompany")
                 .enterAddress("cairo")
                 .select_From_DropDownList("Canada")
-                .otherfield("cairo" , "cairo","45645","+201032024588")
+                .otherfield("giza","cairo","5645","+201032032144")
                 .clickCreateAccountButton();
-        new AccountCreated(driver)
+
+
+        new AccountCreatedPage(driver)
                 .accountCreatedHeaderisVisible()
                 .clickContinueButton();
+
         new HomePage(driver)
                 .verifyLoggedInLabelIsVisible()
                 .clickTheDeleteLink();
-        new DeletedAccount(driver)
+
+        new DeletedAccountPage(driver)
                 .deletedAccountTextIsDisplayed();
     }
 
@@ -55,8 +61,8 @@ public class NewRegister {
 
 
 
-//    @AfterClass
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+    }
 }
