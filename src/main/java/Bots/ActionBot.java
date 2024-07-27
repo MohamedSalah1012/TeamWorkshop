@@ -1,6 +1,7 @@
 package Bots;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 
 import java.time.Duration;
 
@@ -22,6 +23,8 @@ public class ActionBot {
         });
     }
 
+
+
     public static void enterText(WebDriver driver , By locator, String text){
             wait.until(f -> {
             driver.findElement(locator).sendKeys(text);
@@ -34,5 +37,6 @@ public class ActionBot {
             driver.findElement(locator).isDisplayed();
             return true;
         });
+
     }
 }

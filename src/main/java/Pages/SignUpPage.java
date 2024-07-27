@@ -1,7 +1,9 @@
 package Pages;
 import Bots.ActionBot;
+import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class SignUpPage {
 
@@ -25,6 +27,8 @@ public class SignUpPage {
     By firstNameField = By.xpath("//input[@id='first_name']");
     By lastName = By.xpath("//input[@id='last_name']");
     By companyField = By.xpath("//input[@id='company']");
+    By address1 = By.xpath("//input[@id='address1']");
+    By countryDropDownMenu = By.xpath("//select[@id='country']");
     private By genderRadioBtn(String gender){
         return  By.xpath("//input[@type='radio' and @value='"+ gender +"']");
     }
@@ -71,4 +75,20 @@ public class SignUpPage {
         ActionBot.enterText(driver,companyField , company);
         return new SignUpPage(driver);
     }
+
+    public SignUpPage enterAddress(String address1){
+        ActionBot.enterText(driver,companyField , address1);
+        return new SignUpPage(driver);
+    }
+
+    private Select findCountryDropdownElement() {
+        return new Select(driver.findElement(countryDropDownMenu));
+    }
+
+    @Description(" Select option from dropdown list")
+    public SignUpPage select_From_DropDownList(String option) {
+        findCountryDropdownElement().selectByVisibleText(option);
+        return new SignUpPage(driver);
+    }
+
 }
