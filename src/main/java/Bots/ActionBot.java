@@ -16,21 +16,21 @@ public class ActionBot {
             .ignoring(StaleElementReferenceException.class);
 
     public static void clicking(WebDriver driver , By locator){
-        wait.until(f -> {
+            wait.until(f -> {
             driver.findElement(locator).click();
             return true;
         });
     }
 
     public static void enterText(WebDriver driver , By locator, String text){
-        wait.until(f -> {
+            wait.until(f -> {
             driver.findElement(locator).sendKeys(text);
             return true;
         });
     }
 
     public static void isVisible(WebDriver driver , By locator){
-        wait.until(f -> {
+            wait.until(f -> {
             driver.findElement(locator).isDisplayed();
             return true;
         });
