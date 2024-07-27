@@ -31,9 +31,9 @@ public class HomePage {
     }
 
 
-    public Login clickOnSignupLinkButton(){
+    public LoginPage clickOnSignupLinkButton(){
         ActionBot.clicking(driver, signUpLink);
-        return  new Login(driver);
+        return  new LoginPage(driver);
     }
 
     public HomePage verifyLoggedInLabelIsVisible(){
@@ -41,8 +41,8 @@ public class HomePage {
         return new HomePage(driver);
     }
 
-    public DeletedAccount clickTheDeleteLink(){
+    public DeletedAccountPage clickTheDeleteLink(){
         ActionBot.clicking(driver , deleteLink);
-        return new DeletedAccount(driver);
+        return new DeletedAccountPage(driver);
     }
 }

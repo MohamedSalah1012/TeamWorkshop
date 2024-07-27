@@ -4,10 +4,10 @@ import Bots.ActionBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DeletedAccount {
+public class DeletedAccountPage {
     private final WebDriver driver;
 
-    public DeletedAccount(WebDriver driver) {
+    public DeletedAccountPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -16,9 +16,9 @@ public class DeletedAccount {
 
 
 
-    public DeletedAccount deletedAccountTextIsDisplayed(){
+    public DeletedAccountPage deletedAccountTextIsDisplayed(){
         ActionBot.isVisible(driver , accountDeletedHeader);
-        return new DeletedAccount(driver);
+        return new DeletedAccountPage(driver);
     }
 
 }

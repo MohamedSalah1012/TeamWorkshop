@@ -41,19 +41,21 @@ public class SignUpPage {
 
 
 
-                    ///////// Methods /////////
 
+                ///////// Validations /////////
     public SignUpPage signUpFormLabelIsVisible(){
         ActionBot.isVisible(driver , enterAccountInfoLabel);
         return new SignUpPage(driver);
     }
 
+
+                ///////// Methods /////////
     public SignUpPage selectGender(String gender){
         ActionBot.clicking(driver , genderRadioBtn(gender));
         return new SignUpPage(driver);
     }
 
-    public SignUpPage enterPassoword(String password){
+    public SignUpPage enterPassword(String password){
         ActionBot.enterText(driver ,passwordField, password);
         return new SignUpPage(driver);
     }
