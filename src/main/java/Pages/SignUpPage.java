@@ -1,6 +1,7 @@
 package Pages;
 import Bots.ActionBot;
 import jdk.jfr.Description;
+import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -29,6 +30,11 @@ public class SignUpPage {
     By companyField = By.xpath("//input[@id='company']");
     By address1 = By.xpath("//input[@id='address1']");
     By countryDropDownMenu = By.xpath("//select[@id='country']");
+    By stateField = By.xpath("//input[@id='state']");
+    By cityField = By.xpath("//input[@id='city']");
+    By zipcodeField = By.xpath("//input[@id='zipcode']");
+    By mobileNumberField = By.xpath("//input[@id='mobile_number']");
+    By createAccountButton = By.xpath("//button[@type='submit' and @data-qa='create-account']");
     private By genderRadioBtn(String gender){
         return  By.xpath("//input[@type='radio' and @value='"+ gender +"']");
     }
@@ -76,8 +82,8 @@ public class SignUpPage {
         return new SignUpPage(driver);
     }
 
-    public SignUpPage enterAddress(String address1){
-        ActionBot.enterText(driver,companyField , address1);
+    public SignUpPage enterAddress(String address){
+        ActionBot.enterText(driver,address1 , address);
         return new SignUpPage(driver);
     }
 
@@ -88,6 +94,19 @@ public class SignUpPage {
     @Description(" Select option from dropdown list")
     public SignUpPage select_From_DropDownList(String option) {
         findCountryDropdownElement().selectByVisibleText(option);
+        return new SignUpPage(driver);
+    }
+
+    public SignUpPage otherfield(String state , String city , String zipcode, String mobilenumber){
+        ActionBot.enterText(driver ,stateField ,state);
+        ActionBot.enterText(driver , cityField , city);
+        ActionBot.enterText(driver , zipcodeField , zipcode);
+        ActionBot.enterText(driver , mobileNumberField ,mobilenumber);
+        return new SignUpPage(driver);
+    }
+
+    public SignUpPage clickCreateAccountButton(){
+        ActionBot.clicking(driver , createAccountButton );
         return new SignUpPage(driver);
     }
 
