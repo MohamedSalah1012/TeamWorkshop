@@ -16,13 +16,14 @@ public class NewRegister {
                 .clickOnSignupLinkButton();
         new Login(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("ahmed" , "mn@bv.com" );
+                .fillUserSignUpFrom("MS" , "mn@s.com" );
         new SignUpPage(driver)
-                .AccountInfoLabelIsVisible();
-
+                .signUpFormLabelIsVisible()
+                .selectGender("Mrs")
+                .enterPassoword("12345678")
+                .checkNewsLetterCheckBox()
+                .checkReceiveSpecialOfferCheckBox();
     }
-
-
 
 
 
