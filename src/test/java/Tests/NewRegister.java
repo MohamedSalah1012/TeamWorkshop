@@ -27,9 +27,9 @@ public class NewRegister {
                 .enterLastName("Salah")
                 .enterCompany("ourteam")
                 .enterAddress("cairo")
-                .select_From_DropDownList("Canada");
-
-
+                .select_From_DropDownList("Canada")
+                .otherfield("cairo" , "cairo","45645","+201032024588")
+                .clickCreateAccountButton();
     }
 
 
