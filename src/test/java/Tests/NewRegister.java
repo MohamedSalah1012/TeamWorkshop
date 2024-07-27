@@ -25,7 +25,11 @@ public class NewRegister {
                 .checkReceiveSpecialOfferCheckBox()
                 .enterFirstName("Mohamed")
                 .enterLastName("Salah")
-                .enterCompany("ourteam");
+                .enterCompany("ourteam")
+                .enterAddress("cairo")
+                .select_From_DropDownList("Canada");
+
+
     }
 
 
@@ -42,8 +46,8 @@ public class NewRegister {
 
 
 
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterClass
+//    public void tearDown(){
+//        driver.quit();
+//    }
 }
