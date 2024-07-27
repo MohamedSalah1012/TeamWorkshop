@@ -1,6 +1,4 @@
-Project Name:
-
-Automation Practice
+Project Name: Automation Practice
 
 
 Description:
