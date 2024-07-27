@@ -17,7 +17,7 @@ public class NewRegister {
                 .clickOnSignupLinkButton();
         new Login(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("new" , "new@user1.com" );
+                .fillUserSignUpFrom("new1" , "new1@user1.com" );
         new SignUpPage(driver)
                 .signUpFormLabelIsVisible()
                 .selectGender("Mrs")
@@ -35,7 +35,10 @@ public class NewRegister {
                 .accountCreatedHeaderisVisible()
                 .clickContinueButton();
         new HomePage(driver)
-                .verifyLoggedInLabelIsVisible();
+                .verifyLoggedInLabelIsVisible()
+                .clickTheDeleteLink();
+        new DeletedAccount(driver)
+                .deletedAccountTextIsDisplayed();
     }
 
 

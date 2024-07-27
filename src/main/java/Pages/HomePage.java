@@ -22,6 +22,8 @@ public class HomePage {
 
     private final By loggedInAsLabel = By.xpath("//li//a[contains(text(),' Logged in as ')]");
 
+    private final By deleteLink = By.xpath("//a[@href='/delete_account']");
+
 
     public HomePage silderIsVisible(){
         ActionBot.isVisible(driver,silder);
@@ -37,5 +39,10 @@ public class HomePage {
     public HomePage verifyLoggedInLabelIsVisible(){
         ActionBot.isVisible(driver , loggedInAsLabel);
         return new HomePage(driver);
+    }
+
+    public DeletedAccount clickTheDeleteLink(){
+        ActionBot.clicking(driver , deleteLink);
+        return new DeletedAccount(driver);
     }
 }
