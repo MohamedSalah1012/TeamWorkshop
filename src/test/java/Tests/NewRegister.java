@@ -16,7 +16,7 @@ public class NewRegister {
                 .clickOnSignupLinkButton();
         new Login(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("MS" , "mn@s.com" );
+                .fillUserSignUpFrom("cc" , "sssd@lk.com" );
         new SignUpPage(driver)
                 .signUpFormLabelIsVisible()
                 .selectGender("Mrs")
@@ -30,6 +30,11 @@ public class NewRegister {
                 .select_From_DropDownList("Canada")
                 .otherfield("cairo" , "cairo","45645","+201032024588")
                 .clickCreateAccountButton();
+        new AccountCreated(driver)
+                .accountCreatedHeaderisVisible()
+                .clickContinueButton();
+        new HomePage(driver)
+                .verifyLoggedInLabelIsVisible();
     }
 
 
