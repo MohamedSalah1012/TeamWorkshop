@@ -22,7 +22,10 @@ public class NewRegister {
                 .selectGender("Mrs")
                 .enterPassoword("12345678")
                 .checkNewsLetterCheckBox()
-                .checkReceiveSpecialOfferCheckBox();
+                .checkReceiveSpecialOfferCheckBox()
+                .enterFirstName("Mohamed")
+                .enterLastName("Salah")
+                .enterCompany("ourteam");
     }
 
 

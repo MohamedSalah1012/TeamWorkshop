@@ -21,6 +21,10 @@ public class SignUpPage {
     By newsLetterCheckbox = By.xpath("//input[@id='newsletter']");
 
     By receiveSpecialOfferCheckbox = By.xpath("//input[@id='optin']");
+
+    By firstNameField = By.xpath("//input[@id='first_name']");
+    By lastName = By.xpath("//input[@id='last_name']");
+    By companyField = By.xpath("//input[@id='company']");
     private By genderRadioBtn(String gender){
         return  By.xpath("//input[@type='radio' and @value='"+ gender +"']");
     }
@@ -50,6 +54,21 @@ public class SignUpPage {
     }
     public SignUpPage checkReceiveSpecialOfferCheckBox(){
         ActionBot.clicking(driver,receiveSpecialOfferCheckbox);
+        return new SignUpPage(driver);
+    }
+
+    public SignUpPage enterFirstName(String fname){
+        ActionBot.enterText(driver,firstNameField,fname);
+        return new SignUpPage(driver);
+    }
+
+    public SignUpPage enterLastName(String lname){
+        ActionBot.enterText(driver,lastName , lname);
+        return new SignUpPage(driver);
+    }
+
+    public SignUpPage enterCompany(String company){
+        ActionBot.enterText(driver,companyField , company);
         return new SignUpPage(driver);
     }
 }
