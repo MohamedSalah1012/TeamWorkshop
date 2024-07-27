@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 
 Here we can begin
 =======
 Project Name: Automation Practice
->>>>>>> 458155bc9ae90ebd3f009a8d03822e59852d1dba
 
 
 Description:
