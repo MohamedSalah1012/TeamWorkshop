@@ -27,8 +27,8 @@ public class HomePage {
     }
 
 
-//    public Login clickOnSignupLinkButton(){
-//        ActionBot.clicking(driver, signUpLink);
-//        return  new Login(driver);
-//    }
+    public Login clickOnSignupLinkButton(){
+        ActionBot.clicking(driver, signUpLink);
+        return  new Login(driver);
+    }
 }
