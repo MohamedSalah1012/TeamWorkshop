@@ -12,7 +12,7 @@ public class Login {
     }
 
 
-                                //////// Locators////////
+                                         //////// Locators////////
 
     By newUserSignUpHeader = By.xpath("//h2[text()='New User Signup!']");
 
