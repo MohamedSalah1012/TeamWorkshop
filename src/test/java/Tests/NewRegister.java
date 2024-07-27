@@ -42,8 +42,8 @@ public class NewRegister {
 
 
 
-//    @AfterClass
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+    }
 }
