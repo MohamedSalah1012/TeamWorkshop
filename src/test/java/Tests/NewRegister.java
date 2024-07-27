@@ -7,6 +7,7 @@ import org.testng.annotations.*;
 public class NewRegister {
 
     WebDriver driver;
+    String baseUrl ="https://automationexercise.com/";
 
 
     @Test( testName = "New Register")
@@ -16,7 +17,7 @@ public class NewRegister {
                 .clickOnSignupLinkButton();
         new Login(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("cc" , "sssd@lk.com" );
+                .fillUserSignUpFrom("new" , "new@user1.com" );
         new SignUpPage(driver)
                 .signUpFormLabelIsVisible()
                 .selectGender("Mrs")
@@ -42,11 +43,11 @@ public class NewRegister {
 
 
 
-    @BeforeMethod
+    @BeforeClass
     public void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://automationexercise.com/");
+        driver.get(baseUrl);
     }
 
 
