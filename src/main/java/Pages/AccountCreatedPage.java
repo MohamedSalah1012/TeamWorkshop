@@ -13,14 +13,14 @@ public class AccountCreatedPage {
     }
 
 
-    ///////////// Locators //////////
+                                ///////////// Locators //////////
 
 
-    private final By accountCreatedHeader =By.xpath("//h2[@data-qa='account-created']//b");
-    private final By continueButton  =By.xpath("//a[@data-qa='continue-button']");
+    private final By accountCreatedHeader   =By.xpath("//h2[@data-qa='account-created']//b");
+    private final By continueButton         =By.xpath("//a[@data-qa='continue-button']");
 
 
-                        /////////// Methods ////////////
+                                /////////// Methods ////////////
     public AccountCreatedPage accountCreatedHeaderisVisible(){
         ActionBot.isVisible(driver ,accountCreatedHeader);
         return this;
