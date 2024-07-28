@@ -1,7 +1,6 @@
 package Pages;
 import Bots.ActionBot;
 import jdk.jfr.Description;
-import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -39,7 +38,7 @@ public class SignUpPage {
                                     ///////// Validations /////////
 
 
-    public SignUpPage signUpFormLabelIsVisible(){
+    public SignUpPage signUpFormLabel_IsVisible(){
         ActionBot.isVisible(driver , enterAccountInfoLabel);
         return this;
     }
@@ -60,7 +59,7 @@ public class SignUpPage {
         ActionBot.clicking(driver,newsLetterCheckbox);
         return this;
     }
-    public SignUpPage checkReceiveSpecialOfferCheckBox(){
+    public SignUpPage check_Receive_Special_Offer_CheckBox(){
         ActionBot.clicking(driver,receiveSpecialOfferCheckbox);
         return this;
     }
@@ -90,12 +89,12 @@ public class SignUpPage {
     }
 
     @Description(" Select option from dropdown list")
-    public SignUpPage select_From_DropDownList(String option) {
+    public SignUpPage select_Country_From_DropDownList(String option) {
         findCountryDropdownElement().selectByVisibleText(option);
         return this;
     }
 
-    public SignUpPage otherfield(String state , String city , String zipcode, String mobilenumber){
+    public SignUpPage otherfields(String state , String city , String zipcode, String mobilenumber){
         ActionBot.enterText(driver ,stateField ,state);
         ActionBot.enterText(driver , cityField , city);
         ActionBot.enterText(driver , zipcodeField , zipcode);
@@ -103,9 +102,9 @@ public class SignUpPage {
         return this;
     }
 
-    public SignUpPage clickCreateAccountButton(){
+    public AccountCreatedPage clickCreateAccountButton(){
         ActionBot.clicking(driver , createAccountButton );
-        return this;
+        return new AccountCreatedPage(driver);
     }
 
 }

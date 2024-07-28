@@ -14,19 +14,20 @@ public class LoginPage {
 
                                          //////// Locators////////
 
-    By newUserSignUpHeader = By.xpath("//h2[text()='New User Signup!']");
+    private final By newUserSignUpHeader    = By.xpath("//h2[text()='New User Signup!']");
+    private final By userNameForNewUser     = By.xpath("//input[@type='text']");
+    private final By emailForNewUSer        = By.xpath("(//input[@type = 'email' and @name='email'])[2]");
+    private final By signUpButton           = By.xpath("/html/body/section/div/div/div[3]/div/form/button");
 
-    By userNameForNewUser = By.xpath("//input[@type='text']");
-    By emailForNewUSer = By.xpath("(//input[@type = 'email' and @name='email'])[2]");
 
-    By signUpButton = By.xpath("/html/body/section/div/div/div[3]/div/form/button");
 
-    ///////// Methods //////
 
     public LoginPage newUserSignUpHeader_Is_Visible(){
         ActionBot.isVisible(driver , newUserSignUpHeader);
         return this;
     }
+
+                                        ///////// Methods ////////
 
     public SignUpPage fillUserSignUpFrom(String username , String email){
         ActionBot.enterText(driver , userNameForNewUser , username);

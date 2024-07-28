@@ -18,20 +18,20 @@ public class NewRegister {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("new4" , "new4@user3.com" );
+                .fillUserSignUpFrom("new5" , "new5@user5.com" );
 
         new SignUpPage(driver)
-                .signUpFormLabelIsVisible()
+                .signUpFormLabel_IsVisible()
                 .selectGender("Mr")
                 .enterPassword("12345678")
                 .checkNewsLetterCheckBox()
-                .checkReceiveSpecialOfferCheckBox()
+                .check_Receive_Special_Offer_CheckBox()
                 .enterFirstName("mohamed")
                 .enterLastName("salah")
                 .enterCompany("ourcompany")
                 .enterAddress("cairo")
-                .select_From_DropDownList("Canada")
-                .otherfield("giza","cairo","5645","+201032032144")
+                .select_Country_From_DropDownList("Canada")
+                .otherfields("giza","cairo","5645","+201032032144")
                 .clickCreateAccountButton();
 
 
@@ -46,7 +46,6 @@ public class NewRegister {
         new DeletedAccountPage(driver)
                 .deletedAccountTextIsDisplayed();
     }
-
 
 
 
