@@ -18,7 +18,7 @@ public class NewRegister {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("new2" , "new2@user1.com" );
+                .fillUserSignUpFrom("new4" , "new4@user3.com" );
 
         new SignUpPage(driver)
                 .signUpFormLabelIsVisible()

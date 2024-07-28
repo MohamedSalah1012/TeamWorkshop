@@ -8,85 +8,81 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SignUpPage {
 
-
+                                    //////// Constructor /////////
     private  WebDriver driver;
 
     public SignUpPage(WebDriver driver) {
         this.driver = driver;
     }
 
-                  ////////// Locators /////////
+                                    ////////// Locators /////////
 
-    By  enterAccountInfoLabel = By.xpath("//b[contains(text(),'Enter Account Information')]");
-
-    By passwordField = By.xpath("//input[@id='password']");
-
-    By newsLetterCheckbox = By.xpath("//input[@id='newsletter']");
-
-    By receiveSpecialOfferCheckbox = By.xpath("//input[@id='optin']");
-
-    By firstNameField = By.xpath("//input[@id='first_name']");
-    By lastName = By.xpath("//input[@id='last_name']");
-    By companyField = By.xpath("//input[@id='company']");
-    By address1 = By.xpath("//input[@id='address1']");
-    By countryDropDownMenu = By.xpath("//select[@id='country']");
-    By stateField = By.xpath("//input[@id='state']");
-    By cityField = By.xpath("//input[@id='city']");
-    By zipcodeField = By.xpath("//input[@id='zipcode']");
-    By mobileNumberField = By.xpath("//input[@id='mobile_number']");
-    By createAccountButton = By.xpath("//button[@type='submit' and @data-qa='create-account']");
+   private By  enterAccountInfoLabel       = By.xpath("//b[contains(text(),'Enter Account Information')]");
+    private By passwordField                = By.xpath("//input[@id='password']");
+    private By newsLetterCheckbox           = By.xpath("//input[@id='newsletter']");
+    private By receiveSpecialOfferCheckbox  = By.xpath("//input[@id='optin']");
+    private By firstNameField               = By.xpath("//input[@id='first_name']");
+    private By lastName                     = By.xpath("//input[@id='last_name']");
+    private By companyField                 = By.xpath("//input[@id='company']");
+    private By address1                     = By.xpath("//input[@id='address1']");
+    private By countryDropDownMenu          = By.xpath("//select[@id='country']");
+    private By stateField                   = By.xpath("//input[@id='state']");
+    private By cityField                    = By.xpath("//input[@id='city']");
+    private By zipcodeField                 = By.xpath("//input[@id='zipcode']");
+    private By mobileNumberField            = By.xpath("//input[@id='mobile_number']");
+    private By createAccountButton          = By.xpath("//button[@type='submit' and @data-qa='create-account']");
     private By genderRadioBtn(String gender){
         return  By.xpath("//input[@type='radio' and @value='"+ gender +"']");
     }
 
 
+                                    ///////// Validations /////////
 
 
-                ///////// Validations /////////
     public SignUpPage signUpFormLabelIsVisible(){
         ActionBot.isVisible(driver , enterAccountInfoLabel);
-        return new SignUpPage(driver);
+        return this;
     }
 
 
-                ///////// Methods /////////
+                                    ///////// Methods ////////////
     public SignUpPage selectGender(String gender){
         ActionBot.clicking(driver , genderRadioBtn(gender));
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage enterPassword(String password){
         ActionBot.enterText(driver ,passwordField, password);
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage checkNewsLetterCheckBox(){
         ActionBot.clicking(driver,newsLetterCheckbox);
-        return new SignUpPage(driver);
+        return this;
     }
     public SignUpPage checkReceiveSpecialOfferCheckBox(){
         ActionBot.clicking(driver,receiveSpecialOfferCheckbox);
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage enterFirstName(String fname){
         ActionBot.enterText(driver,firstNameField,fname);
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage enterLastName(String lname){
         ActionBot.enterText(driver,lastName , lname);
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage enterCompany(String company){
         ActionBot.enterText(driver,companyField , company);
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage enterAddress(String address){
         ActionBot.enterText(driver,address1 , address);
-        return new SignUpPage(driver);
+        return this;
     }
 
     private Select findCountryDropdownElement() {
@@ -96,7 +92,7 @@ public class SignUpPage {
     @Description(" Select option from dropdown list")
     public SignUpPage select_From_DropDownList(String option) {
         findCountryDropdownElement().selectByVisibleText(option);
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage otherfield(String state , String city , String zipcode, String mobilenumber){
@@ -104,12 +100,12 @@ public class SignUpPage {
         ActionBot.enterText(driver , cityField , city);
         ActionBot.enterText(driver , zipcodeField , zipcode);
         ActionBot.enterText(driver , mobileNumberField ,mobilenumber);
-        return new SignUpPage(driver);
+        return this;
     }
 
     public SignUpPage clickCreateAccountButton(){
         ActionBot.clicking(driver , createAccountButton );
-        return new SignUpPage(driver);
+        return this;
     }
 
 }
