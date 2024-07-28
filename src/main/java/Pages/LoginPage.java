@@ -25,7 +25,7 @@ public class LoginPage {
 
     public LoginPage newUserSignUpHeader_Is_Visible(){
         ActionBot.isVisible(driver , newUserSignUpHeader);
-        return new LoginPage(driver);
+        return this;
     }
 
     public SignUpPage fillUserSignUpFrom(String username , String email){

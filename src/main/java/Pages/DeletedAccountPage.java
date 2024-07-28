@@ -11,14 +11,14 @@ public class DeletedAccountPage {
         this.driver = driver;
     }
 
-    By accountDeletedHeader = By.xpath("//h2[@data-qa='account-deleted']/b");
+    private final By accountDeletedHeader = By.xpath("//h2[@data-qa='account-deleted']/b");
 
 
 
 
     public DeletedAccountPage deletedAccountTextIsDisplayed(){
         ActionBot.isVisible(driver , accountDeletedHeader);
-        return new DeletedAccountPage(driver);
+        return this;
     }
 
 }

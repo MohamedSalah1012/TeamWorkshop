@@ -13,21 +13,21 @@ public class AccountCreatedPage {
     }
 
 
-                    ///////////// Locators //////////
+    ///////////// Locators //////////
 
 
-    By accountCreatedHeader =By.xpath("//h2[@data-qa='account-created']//b");
-    By continueButton  =By.xpath("//a[@data-qa='continue-button']");
+    private final By accountCreatedHeader =By.xpath("//h2[@data-qa='account-created']//b");
+    private final By continueButton  =By.xpath("//a[@data-qa='continue-button']");
 
 
-                    /////////// Methods ////////////
+                        /////////// Methods ////////////
     public AccountCreatedPage accountCreatedHeaderisVisible(){
         ActionBot.isVisible(driver ,accountCreatedHeader);
-        return new AccountCreatedPage(driver);
+        return this;
     }
 
-    public AccountCreatedPage clickContinueButton(){
+    public HomePage clickContinueButton(){
         ActionBot.clicking(driver ,continueButton);
-        return new AccountCreatedPage(driver);
+        return new HomePage(driver);
     }
 }

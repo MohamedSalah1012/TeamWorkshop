@@ -27,7 +27,7 @@ public class HomePage {
 
     public HomePage silderIsVisible(){
         ActionBot.isVisible(driver,silder);
-        return new HomePage(driver);
+        return this;
     }
 
 
@@ -38,7 +38,7 @@ public class HomePage {
 
     public HomePage verifyLoggedInLabelIsVisible(){
         ActionBot.isVisible(driver , loggedInAsLabel);
-        return new HomePage(driver);
+        return this;
     }
 
     public DeletedAccountPage clickTheDeleteLink(){
