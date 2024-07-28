@@ -1,18 +1,17 @@
 
-Here we can begin
-=======
-Project Name:  Automation Practice
+
+# Project Name:  Automation Practice👋
 
 
-Description:
+## Description:
 
 This project leverages Selenium and TestNG to create a robust and scalable automated testing framework. 
 It supports testing web applications, providing an easy way to write, run, and manage tests.
 
 
 
-Installation:
-  Prerequisites:
+## Installation:
+  ### Prerequisites:
   Java Development Kit (JDK) 8 or higher
   Maven
   A web browser (e.g., Chrome, Firefox)
@@ -20,16 +19,15 @@ Installation:
 
 
 
-  Features:
-    Supports multiple browsers (Chrome, Firefox, etc.)
-    Data-driven testing
-    Detailed test reports
-    Easy integration with CI/CD pipelines
+## Features:
+    - Supports multiple browsers (Chrome, Firefox, etc.)
+    - Data-driven testing
+    - Detailed test reports
+    - Easy integration with CI/CD pipelines
 
 
 
-
-  Contributing
+## Contributing
   We welcome contributions! Please follow these steps to contribute:
   
   1. Fork the repository.
