@@ -9,7 +9,6 @@ public class NewRegister {
     WebDriver driver;
     String baseUrl ="https://automationexercise.com/";
 
-
     @Test( testName = "New Register")
     public void newRegister(){
         new HomePage(driver)
