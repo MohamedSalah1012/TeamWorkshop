@@ -39,7 +39,7 @@ public class HomePage {
 
                                         //////// Methods //////////
 
-    public LoginPage clickOnSignupLinkButton(){
+    public LoginPage clickOnSignupLoginLinkButton(){
         ActionBot.clicking(driver, signUpLink);
         return  new LoginPage(driver);
     }

@@ -11,10 +11,10 @@ public class NewRegister {
 
 
     @Test( testName = "New Register")
-    public void sliderIsVisible(){
+    public void newRegister(){
         new HomePage(driver)
                 .silderIsVisible()
-                .clickOnSignupLinkButton();
+                .clickOnSignupLoginLinkButton();
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
