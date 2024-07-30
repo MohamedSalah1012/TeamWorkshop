@@ -1,13 +1,18 @@
 package Tests;
 
-import Pages.*;
+import Pages.DeletedAccountPage;
+import Pages.HomePage;
+import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-public class Validlogin {
+public class ValidLogin {
+
     WebDriver driver;
-    String invalid_email = "s@f.com" , invalid_pass = "1234";
+    String valid_email = "mo@salah.com" , valid_pass = "12345678";
 
 
 
@@ -20,8 +25,13 @@ public class Validlogin {
                 .clickOnSignupLoginLinkButton();
         new LoginPage(driver)
                 .loginHeader_Is_Visible()
-                .loginWithValidCredentials(invalid_email , invalid_pass)
+                .loginWithValidCredentials(valid_email , valid_pass)
                 .checkAlertMessageIsDisplayed();
+        new HomePage(driver)
+                .verifyLoggedInLabelIsVisible()
+                .clickTheDeleteLink();
+        new DeletedAccountPage(driver)
+                .deletedAccountTextIsDisplayed();
     }
 
 
