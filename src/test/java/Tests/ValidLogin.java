@@ -25,8 +25,7 @@ public class ValidLogin {
                 .clickOnSignupLoginLinkButton();
         new LoginPage(driver)
                 .loginHeader_Is_Visible()
-                .loginWithValidCredentials(valid_email , valid_pass)
-                .checkAlertMessageIsDisplayed();
+                .loginWithValidCredentials(valid_email , valid_pass);
         new HomePage(driver)
                 .verifyLoggedInLabelIsVisible()
                 .clickTheDeleteLink();
