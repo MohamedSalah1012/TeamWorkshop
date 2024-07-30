@@ -1,18 +1,22 @@
 package Tests;
-import Pages.*;
-import jdk.jfr.Description;
+
+import Pages.DeletedAccountPage;
+import Pages.HomePage;
+import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.*;
-public class Invalidlogin {
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class ValidLogin {
 
     WebDriver driver;
-    String invalid_email = "s@f.com" , invalid_pass = "1234";
+    String valid_email = "mo@salah.com" , valid_pass = "12345678";
 
 
 
 
-    @Description("Login with Invalid credentials")
     @Test(testName = "Invalid Login with invalid email and invalid password" )
     public void invalidLogin(){
 
@@ -21,8 +25,13 @@ public class Invalidlogin {
                 .clickOnSignupLoginLinkButton();
         new LoginPage(driver)
                 .loginHeader_Is_Visible()
-                .loginWithValidCredentials(invalid_email , invalid_pass)
+                .loginWithValidCredentials(valid_email , valid_pass)
                 .checkAlertMessageIsDisplayed();
+        new HomePage(driver)
+                .verifyLoggedInLabelIsVisible()
+                .clickTheDeleteLink();
+        new DeletedAccountPage(driver)
+                .deletedAccountTextIsDisplayed();
     }
 
 
