@@ -1,23 +1,29 @@
 package Tests;
+
 import Pages.*;
+import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class NewRegister {
+public class NewRegister_NoDelete {
 
     WebDriver driver;
-    String baseUrl ="https://automationexercise.com/";
+    String baseUrl ="https://automationexercise.com/",
+    username = "mohamed salah",
+    email="mo@salah.com";
 
-    @Test( testName = "New Register")
-    public void newRegister(){
+
+    @Description("This test for register a new user but will not delete the account")
+    @Test( testName = " Register as a new user - with No delete account ")
+    public void newRegister() {
         new HomePage(driver)
                 .silderIsVisible()
                 .clickOnSignupLoginLinkButton();
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("new5" , "new5@user5.com" );
+                .fillUserSignUpFrom(username , email);
 
         new SignUpPage(driver)
                 .signUpFormLabel_IsVisible()
@@ -30,7 +36,7 @@ public class NewRegister {
                 .enterCompany("ourcompany")
                 .enterAddress("cairo")
                 .select_Country_From_DropDownList("Canada")
-                .otherfields("giza","cairo","5645","+201032032144")
+                .otherfields("giza", "cairo", "5645", "+201032032144")
                 .clickCreateAccountButton();
 
 
@@ -39,15 +45,8 @@ public class NewRegister {
                 .clickContinueButton();
 
         new HomePage(driver)
-                .verifyLoggedInLabelIsVisible()
-                .clickTheDeleteLink();
-
-        new DeletedAccountPage(driver)
-                .deletedAccountTextIsDisplayed();
+                .verifyLoggedInLabelIsVisible();
     }
-
-
-
 
 
     @BeforeClass

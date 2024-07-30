@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class Validlogin {
+public class Invalidlogin {
     WebDriver driver;
     String invalid_email = "s@f.com" , invalid_pass = "1234";
 
