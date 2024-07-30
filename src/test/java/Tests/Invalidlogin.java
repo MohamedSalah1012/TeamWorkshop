@@ -1,5 +1,6 @@
 package Tests;
 import Pages.*;
+import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -11,6 +12,7 @@ public class Invalidlogin {
 
 
 
+    @Description("Login with Invalid credentials")
     @Test(testName = "Invalid Login with invalid email and invalid password" )
     public void invalidLogin(){
 
