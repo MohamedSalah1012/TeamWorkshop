@@ -3,6 +3,7 @@ package Tests;
 import Pages.DeletedAccountPage;
 import Pages.HomePage;
 import Pages.LoginPage;
+import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -17,7 +18,8 @@ public class ValidLogin {
 
 
 
-    @Test(testName = "Invalid Login with invalid email and invalid password" )
+    @Description("")
+    @Test(testName = "valid Login with valid email and valid password" )
     public void invalidLogin(){
 
         new HomePage(driver)
