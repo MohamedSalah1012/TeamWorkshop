@@ -26,10 +26,6 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    - name: Set up ChromeDriver
-      uses: nanasess/setup-chromedriver@v1
-      with:
-        version: latest
 
     - name: Run tests
       run: mvn test
