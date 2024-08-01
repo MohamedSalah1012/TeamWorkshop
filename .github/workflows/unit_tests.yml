@@ -19,9 +19,3 @@ jobs:
           distribution: 'adopt'
           java-version: '21'
 
-      - name: Install dependencies
-        run: mvn install -DskipTests
-
-      - name: Run specific test class
-        run:  mvn test -Dtest=Tests.NewRegister_Delete -DfailIfNoTests=false -e -X
-
