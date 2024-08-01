@@ -1,14 +1,19 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual workflow
+name: Greeting the user on each pull and push call
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
   pull_request:
+    branches:
+      - main
 
+  push:
+    branches:
+      - main
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+      # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
   greet:
@@ -19,4 +24,5 @@ jobs:
     steps:
     # Runs a single command using the runner's shell
     - name: Send greeting
-      run: echo "Hello Contributer, Congrats you made a pull request "
+      run: echo "I am a job running every time you push or pull on the main branch "
+
