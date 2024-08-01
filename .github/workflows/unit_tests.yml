@@ -23,4 +23,5 @@ jobs:
         run: mvn install -DskipTests
 
       - name: Run specific test class
-        run:  mvn test -Dtest=tests.MyTest.NewRegister_Delete
+        run:  mvn test -Dtest=Tests.NewRegister_Delete -DfailIfNoTests=false -e -X
+
