@@ -25,7 +25,7 @@ jobs:
     steps:
       # Runs a single command using the runner's shell
       - name:  checkout code
-        uses:  actions.checkout@v2
+        uses:  actions.checkout@main
 
       - name:  Run selenium tests
         uses:  mvn test
