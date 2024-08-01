@@ -6,8 +6,6 @@ name: Manual workflow
 # or API.
 on:
   pull_request:
-    workflow_dispatch:
-    # Inputs the workflow accepts.
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
