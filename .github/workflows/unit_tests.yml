@@ -1,0 +1,23 @@
+# This is a basic workflow that is manually triggered
+
+name: for push only
+
+# or API.
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Runs a single command using the runner's shell
+    - name: Checkout
+      uses: actions/checkout@v4.1.7
+
+    - name: run-unit-test
+      run:  mvn test 
+
