@@ -7,7 +7,8 @@ import org.testng.annotations.*;
 public class Invalidlogin {
 
     WebDriver driver;
-    String invalid_email = "s@f.com" , invalid_pass = "1234";
+    String baseUrl = "https://automationexercise.com",
+     invalid_email = "s@f.com" , invalid_pass = "1234";
 
 
 
@@ -33,9 +34,9 @@ public class Invalidlogin {
 
     @BeforeClass
     public void setUp(){
-        driver =new ChromeDriver();
+        driver =new ChromeDriver() ;
         driver.manage().window().maximize();
-        driver.get("https://automationexercise.com");
+        driver.get(baseUrl);
     }
 
     @AfterClass
