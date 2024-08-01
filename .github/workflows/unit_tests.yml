@@ -19,3 +19,16 @@ jobs:
           distribution: 'adopt'
           java-version: '21'
 
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Install dependencies
+        run: mvn install -DskipTests
+
+      - name: Run specific test class
+        run: mvn test -Dtest=Tests/NewRegister_Delete
