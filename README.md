@@ -30,7 +30,7 @@ It supports testing web applications, providing an easy way to write, run, and m
 ## Contributing
   We welcome contributions! Please follow these steps to contribute:
   
-  1. Fork the repository.
+  1. Clone the repository.
   2. Create a new branch (git checkout -b feature-branch).
   3. Make and commit your changes (git commit -m 'Add some feature').
   4. Push to the branch (git push origin feature-branch).
