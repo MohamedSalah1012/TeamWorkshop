@@ -12,8 +12,7 @@ It supports testing web applications, providing an easy way to write, run, and m
 
 ## Installation:
   ### Prerequisites:
-  Java Development Kit (JDK) 8 or higher
-  Maven
+  Java Development Kit (JDK) 21  Maven
   A web browser (e.g., Chrome, Firefox)
   WebDriver for your browser (e.g., ChromeDriver for Chrome)
 
