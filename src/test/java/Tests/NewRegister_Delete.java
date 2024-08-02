@@ -29,7 +29,8 @@ public class NewRegister_Delete {
                 .enterLastName("salah")
                 .enterCompany("ourcompany")
                 .enterAddress("cairo")
-                .select_Country_From_DropDownList("Canada")
+                .selectCountry("United States")
+//                .select_Country_From_DropDownList("Canada")
                 .otherfields("giza","cairo","5645","+201032032144")
                 .clickCreateAccountButton();
 

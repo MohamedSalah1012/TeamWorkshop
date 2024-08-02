@@ -35,7 +35,7 @@ public class NewRegister_NoDelete {
                 .enterLastName("salah")
                 .enterCompany("ourcompany")
                 .enterAddress("cairo")
-                .select_Country_From_DropDownList("Canada")
+//                .select_Country_From_DropDownList("Canada")
                 .otherfields("giza", "cairo", "5645", "+201032032144")
                 .clickCreateAccountButton();
 

@@ -1,4 +1,6 @@
 package Bots;
+import Pages.SignUpPage;
+import jdk.jfr.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
@@ -37,6 +39,17 @@ public class ActionBot {
             driver.findElement(locator).isDisplayed();
             return true;
         });
-
     }
+
+
+    @Description("Find the country dropdown list ")
+    public static Select findCountryDropdownList( WebDriver driver ,By locator ) {
+        wait.until(f -> {
+            driver.findElement(locator).click();
+            return true;
+        });
+        return new Select(driver.findElement(locator));
+    }
+
+
 }

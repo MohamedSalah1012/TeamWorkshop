@@ -16,7 +16,7 @@ public class SignUpPage {
 
                                     ////////// Locators /////////
 
-   private By  enterAccountInfoLabel       = By.xpath("//b[contains(text(),'Enter Account Information')]");
+    private By  enterAccountInfoLabel       = By.xpath("//b[contains(text(),'Enter Account Information')]");
     private By passwordField                = By.xpath("//input[@id='password']");
     private By newsLetterCheckbox           = By.xpath("//input[@id='newsletter']");
     private By receiveSpecialOfferCheckbox  = By.xpath("//input[@id='optin']");
@@ -30,8 +30,8 @@ public class SignUpPage {
     private By zipcodeField                 = By.xpath("//input[@id='zipcode']");
     private By mobileNumberField            = By.xpath("//input[@id='mobile_number']");
     private By createAccountButton          = By.xpath("//button[@type='submit' and @data-qa='create-account']");
-    private By genderRadioBtn(String gender){
-        return  By.xpath("//input[@type='radio' and @value='"+ gender +"']");
+    private By title(String titleGender){
+        return  By.xpath("//input[@type='radio' and @value='"+ titleGender +"']");
     }
 
 
@@ -45,8 +45,13 @@ public class SignUpPage {
 
 
                                     ///////// Methods ////////////
-    public SignUpPage selectGender(String gender){
-        ActionBot.clicking(driver , genderRadioBtn(gender));
+
+
+
+
+
+    public SignUpPage selectGender(String titleGender){
+        ActionBot.clicking(driver , title(titleGender));
         return this;
     }
 
@@ -84,15 +89,26 @@ public class SignUpPage {
         return this;
     }
 
-    private Select findCountryDropdownElement() {
-        return new Select(driver.findElement(countryDropDownMenu));
-    }
 
-    @Description(" Select option from dropdown list")
-    public SignUpPage select_Country_From_DropDownList(String option) {
-        findCountryDropdownElement().selectByVisibleText(option);
+
+    public SignUpPage selectCountry(String option){
+        ActionBot.findCountryDropdownList( driver , countryDropDownMenu).selectByVisibleText(option);
         return this;
     }
+
+
+
+
+//    @Description("Find the country dropdown list ")
+//    private Select findCountryDropdownElement() {
+//        return new Select(driver.findElement(countryDropDownMenu));
+//    }
+//
+//    @Description(" Select option from dropdown list")
+//    public SignUpPage select_Country_From_DropDownList(String option) {
+//        findCountryDropdownElement().selectByVisibleText(option);
+//        return this;
+//    }
 
     public SignUpPage otherfields(String state , String city , String zipcode, String mobilenumber){
         ActionBot.enterText(driver ,stateField ,state);

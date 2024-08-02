@@ -16,6 +16,7 @@ public class LoginPage {
                                          //////// Locators////////
 
 
+
     @Description("These locators for the 'Sign Up' section")
     private final By newUserSignUpHeader    = By.xpath("//h2[text()='New User Signup!']");
     private final By userNameForNewUser     = By.xpath("//input[@type='text']");
@@ -23,7 +24,6 @@ public class LoginPage {
     private final By signUpButton           = By.xpath("/html/body/section/div/div/div[3]/div/form/button");
 
     @Description("These locators for the 'login' section ")
-
     private final By loginHeader = By.xpath("//h2[text()='Login to your account']");
     private final By email_ForLogin         = By.xpath("//input[@type=\"email\" and @ data-qa=\"login-email\"]");
     private final By password_ForLogin      = By.xpath("//input[@type='password' and @ data-qa= 'login-password']");
