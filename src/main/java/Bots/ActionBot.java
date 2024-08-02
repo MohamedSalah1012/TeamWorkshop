@@ -51,5 +51,12 @@ public class ActionBot {
         return new Select(driver.findElement(locator));
     }
 
+    public static void acceptAlert(WebDriver driver){
+        wait.until(f -> {
+            driver.switchTo().alert().accept();
+            return true;
+        });
+    }
+
 
 }

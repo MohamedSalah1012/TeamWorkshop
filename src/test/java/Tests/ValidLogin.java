@@ -19,7 +19,7 @@ public class ValidLogin {
     public void invalidLogin(){
 
         new HomePage(driver)
-                .silderIsVisible()
+                .silderInHomePageIsVisible()
                 .clickOnSignupLoginLinkButton();
         new LoginPage(driver)
                 .loginHeader_Is_Visible()
