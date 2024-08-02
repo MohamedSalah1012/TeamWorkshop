@@ -14,7 +14,7 @@ public class SignUpPage {
 
                                     ////////// Locators /////////
 
-    private By  enterAccountInfoLabel       = By.xpath("//b[contains(text(),'Enter Account Information')]");
+    private By enterAccountInfoLabel       = By.xpath("//b[contains(text(),'Enter Account Information')]");
     private By passwordField                = By.xpath("//input[@id='password']");
     private By newsLetterCheckbox           = By.xpath("//input[@id='newsletter']");
     private By receiveSpecialOfferCheckbox  = By.xpath("//input[@id='optin']");

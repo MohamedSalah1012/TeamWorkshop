@@ -17,6 +17,8 @@ public class HomePage {
 
     private final By signUpLink         = By.xpath("//a[@href='/login']");
 
+    private final By contactUsLink      = By.xpath("//a[@href='/contact_us']");
+
     private final By silder             = By.xpath("(//div[@class='carousel-inner'])[1]");
 
     private final By loggedInAsLabel    = By.xpath("//li//a[contains(text(),' Logged in as ')]");
@@ -27,7 +29,7 @@ public class HomePage {
 
 
                                         //////// Validations //////////
-    public HomePage silderIsVisible(){
+    public HomePage silderInHomePageIsVisible(){
         ActionBot.isVisible(driver,silder);
         return this;
     }
@@ -42,6 +44,12 @@ public class HomePage {
     public LoginPage clickOnSignupLoginLinkButton(){
         ActionBot.clicking(driver, signUpLink);
         return  new LoginPage(driver);
+    }
+
+
+    public ContactUsPage clickOnContactUsLink(){
+        ActionBot.clicking(driver, contactUsLink);
+        return new ContactUsPage(driver);
     }
 
     public DeletedAccountPage clickTheDeleteLink(){

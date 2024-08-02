@@ -12,7 +12,7 @@ public class NewRegister_Delete {
     @Test( testName = " Register as a new user and delete account ")
     public void newRegister(){
         new HomePage(driver)
-                .silderIsVisible()
+                .silderInHomePageIsVisible()
                 .clickOnSignupLoginLinkButton();
 
         new LoginPage(driver)
