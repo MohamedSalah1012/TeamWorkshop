@@ -17,7 +17,7 @@ public class NewRegister_Delete {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("new5" , "new5@user5.com" );
+                .fillUserSignUpFrom("new6" , "new6@user6.com" );
 
         new SignUpPage(driver)
                 .signUpFormLabel_IsVisible()
