@@ -1,9 +1,7 @@
 package Pages;
 import Bots.ActionBot;
-import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class SignUpPage {
 
@@ -48,55 +46,23 @@ public class SignUpPage {
 
 
 
-
-
-    public SignUpPage selectGender(String titleGender){
+    public AccountCreatedPage signUpNewAccount(String titleGender, String password, String fname, String lname, String company , String address, String country, String state , String city , String zipcode, String mobilenumber){
         ActionBot.clicking(driver , title(titleGender));
-        return this;
-    }
-
-    public SignUpPage enterPassword(String password){
         ActionBot.enterText(driver ,passwordField, password);
-        return this;
-    }
-
-    public SignUpPage checkNewsLetterCheckBox(){
         ActionBot.clicking(driver,newsLetterCheckbox);
-        return this;
-    }
-    public SignUpPage check_Receive_Special_Offer_CheckBox(){
         ActionBot.clicking(driver,receiveSpecialOfferCheckbox);
-        return this;
-    }
-
-    public SignUpPage enterFirstName(String fname){
         ActionBot.enterText(driver,firstNameField,fname);
-        return this;
-    }
-
-    public SignUpPage enterLastName(String lname){
         ActionBot.enterText(driver,lastName , lname);
-        return this;
-    }
-
-    public SignUpPage enterCompany(String company){
         ActionBot.enterText(driver,companyField , company);
-        return this;
-    }
-
-    public SignUpPage enterAddress(String address){
         ActionBot.enterText(driver,address1 , address);
-        return this;
+        ActionBot.findCountryDropdownList( driver , countryDropDownMenu).selectByVisibleText(country);
+        ActionBot.enterText(driver ,stateField ,state);
+        ActionBot.enterText(driver , cityField , city);
+        ActionBot.enterText(driver , zipcodeField , zipcode);
+        ActionBot.enterText(driver , mobileNumberField ,mobilenumber);
+        ActionBot.clicking(driver , createAccountButton );
+        return new AccountCreatedPage(driver);
     }
-
-
-
-    public SignUpPage selectCountry(String option){
-        ActionBot.findCountryDropdownList( driver , countryDropDownMenu).selectByVisibleText(option);
-        return this;
-    }
-
-
 
 
 //    @Description("Find the country dropdown list ")
@@ -109,18 +75,4 @@ public class SignUpPage {
 //        findCountryDropdownElement().selectByVisibleText(option);
 //        return this;
 //    }
-
-    public SignUpPage otherfields(String state , String city , String zipcode, String mobilenumber){
-        ActionBot.enterText(driver ,stateField ,state);
-        ActionBot.enterText(driver , cityField , city);
-        ActionBot.enterText(driver , zipcodeField , zipcode);
-        ActionBot.enterText(driver , mobileNumberField ,mobilenumber);
-        return this;
-    }
-
-    public AccountCreatedPage clickCreateAccountButton(){
-        ActionBot.clicking(driver , createAccountButton );
-        return new AccountCreatedPage(driver);
-    }
-
 }
