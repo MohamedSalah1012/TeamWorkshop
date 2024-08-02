@@ -62,7 +62,7 @@ public class LoginPage {
 
 
 
-    public SignUpPage fillUserSignUpFrom(String username , String email){
+    public SignUpPage enterUsernameAndEmail(String username , String email){
         ActionBot.enterText(driver , userNameForNewUser , username);
         ActionBot.enterText( driver , emailForNewUSer ,email);
         ActionBot.clicking(driver , signUpButton);

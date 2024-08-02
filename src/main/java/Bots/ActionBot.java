@@ -42,7 +42,7 @@ public class ActionBot {
     }
 
 
-    @Description("Find the country dropdown list ")
+    @Description("Find the dropdown list ")
     public static Select findCountryDropdownList( WebDriver driver ,By locator ) {
         wait.until(f -> {
             driver.findElement(locator).click();

@@ -17,22 +17,12 @@ public class NewRegister_Delete {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom("new6" , "new6@user6.com" );
+                .enterUsernameAndEmail("new6" , "new6@user6.com" );
 
         new SignUpPage(driver)
-                .signUpFormLabel_IsVisible()
-                .selectGender("Mr")
-                .enterPassword("12345678")
-                .checkNewsLetterCheckBox()
-                .check_Receive_Special_Offer_CheckBox()
-                .enterFirstName("mohamed")
-                .enterLastName("salah")
-                .enterCompany("ourcompany")
-                .enterAddress("cairo")
-                .selectCountry("United States")
-//                .select_Country_From_DropDownList("Canada")
-                .otherfields("giza","cairo","5645","+201032032144")
-                .clickCreateAccountButton();
+                .signUpNewAccount("Mr","12345678","mohamed"
+                                 ,"salah","sting","cairo"
+                                 ,"Canada","giza","cairo","1565","01232652547");
 
 
         new AccountCreatedPage(driver)

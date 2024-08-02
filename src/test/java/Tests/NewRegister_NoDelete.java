@@ -10,8 +10,8 @@ public class NewRegister_NoDelete {
 
     WebDriver driver;
     String baseUrl ="https://automationexercise.com/",
-    username = "mohamed salah",
-    email="mo@salah.com";
+    username = "xyz",
+    email="xyz@salah.com";
 
 
     @Description("This test for register a new user but will not delete the account")
@@ -23,21 +23,12 @@ public class NewRegister_NoDelete {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .fillUserSignUpFrom(username , email);
+                .enterUsernameAndEmail(username , email);
 
         new SignUpPage(driver)
-                .signUpFormLabel_IsVisible()
-                .selectGender("Mr")
-                .enterPassword("12345678")
-                .checkNewsLetterCheckBox()
-                .check_Receive_Special_Offer_CheckBox()
-                .enterFirstName("mohamed")
-                .enterLastName("salah")
-                .enterCompany("ourcompany")
-                .enterAddress("cairo")
-//                .select_Country_From_DropDownList("Canada")
-                .otherfields("giza", "cairo", "5645", "+201032032144")
-                .clickCreateAccountButton();
+                .signUpNewAccount("Mr","12345678","ahmed"
+                        ,"salah","sting","cairo"
+                        ,"Canada","giza","cairo","1565","01232652547");
 
 
         new AccountCreatedPage(driver)
