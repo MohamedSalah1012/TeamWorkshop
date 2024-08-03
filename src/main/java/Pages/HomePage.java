@@ -25,7 +25,16 @@ public class HomePage {
 
     private final By deleteLink         = By.xpath("//a[@href='/delete_account']");
 
-    private final By productsPageLink           = By.xpath("//a[@href='/products']");
+    private final By productsPageLink   = By.xpath("//a[@href='/products']");
+
+    private final By subscriptionText   = By.xpath("//h2[contains(text(),\"Subscription\")]");
+
+    private final By subscriptionInput       = By.xpath("//input[@id=\"susbscribe_email\"]");
+
+    private final By submitSubsriptionButton       = By.xpath("//button[@id='subscribe']");
+
+
+    //button[@id='subscribe']
 
                                         //////// Validations //////////
     public HomePage silderInHomePageIsVisible(){
@@ -37,6 +46,10 @@ public class HomePage {
         ActionBot.isVisible(driver , loggedInAsLabel);
         return this;
     }
+
+
+
+
 
                                         //////// Links //////////
 
@@ -60,6 +73,21 @@ public class HomePage {
         ActionBot.clicking(driver , deleteLink);
         return new DeletedAccountPage(driver);
     }
+
+
+
+
+    public HomePage verifyTextAndSubscribe(String email){
+        ActionBot.isVisible(driver , subscriptionText);
+        ActionBot.enterText(driver , subscriptionInput , email );
+        ActionBot.clicking(driver , submitSubsriptionButton);
+        return this;
+    }
+
+
+
+
+
 
 
 }
