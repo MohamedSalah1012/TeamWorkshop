@@ -21,19 +21,20 @@ public class ProductsPage {
     private final By allProductsText      =   By.xpath("//h2[contains(text() , 'All Products')]");
     private final By searchInput          =   By.xpath("//input[@name='search' and @id='search_product']");
     private final By searchButton         =   By.xpath("//button[@id=\"submit_search\"]");
+    private final By viewProductButton         =   By.xpath("//a[@href='/product_details/1']");
 
 
-                                ///////// Validations ///////
+                                 ///////// Validations ///////
 
     @Description("check that  'All products' text is displayed ")
     public ProductsPage allProdcutsTextIsVisible(){
-        driver.findElement(allProductsText).isDisplayed();
+        ActionBot.isVisible(driver, allProductsText);
         return this;
     }
 
     @Description("check that   'All products' area is displayed ")
     public ProductsPage allProdcutsAreaIsVisible(){
-        driver.findElement(allProductsArea).isDisplayed();
+        ActionBot.isVisible(driver, allProductsArea);
         return this;
     }
 
@@ -41,13 +42,19 @@ public class ProductsPage {
 
 
 
-                                //////// Methods ////////
+                                 //////// Methods ////////
 
     @Description(" Enter a product name in the 'search input & click on seach button  ")
     public SearchResultPage searchForProduct(String product){
-        driver.findElement(searchInput).sendKeys(product);
-        driver.findElement(searchButton).click();
+        ActionBot.enterText(driver, searchInput, product);
+        ActionBot.clicking(driver, searchButton);
         return new SearchResultPage(driver);
+    }
+
+    @Description(" Enter a product name in the 'search input & click on seach button  ")
+    public ProductDetailsPage clickOnViewProductOfFirstProduct() {
+        driver.findElement(viewProductButton).click();
+        return new ProductDetailsPage(driver);
     }
 
 
