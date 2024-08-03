@@ -28,7 +28,8 @@ public class ContactusForm {
                 .getInTouchHeaderIsVisible()
                 .fillContactUsFormAndSubmit(name, email , subject , message ,uploadedFile)
                 .successMessageIsVisible()
-                .clickOnTheHomePageButton()
+                .clickOnTheHomePageButton();
+        new HomePage(driver)
                 .silderInHomePageIsVisible();
     }
 
