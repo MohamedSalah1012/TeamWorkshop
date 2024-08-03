@@ -21,7 +21,7 @@ public class ProductsPage {
     private final By searchInput          =   By.xpath("//input[@name='search' and @id='search_product']");
     private final By searchButton         =   By.xpath("//button[@id=\"submit_search\"]");
     private final By viewProductButton    = By.xpath("//li//a[@href=\"/product_details/1\"]");
-    }
+
 
 
                                  ///////// Validations ///////
