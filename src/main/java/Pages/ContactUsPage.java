@@ -3,6 +3,7 @@ package Pages;
 import Bots.ActionBot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class ContactUsPage {
@@ -51,9 +52,9 @@ public class ContactUsPage {
                                 /////////// Methods //////////
     public ContactUsPage fillContactUsFormAndSubmit(String name, String email, String subject , String message , String file){
         ActionBot.enterText(driver,nameField,name);
-        ActionBot.enterText(driver, emailField ,email );
-        ActionBot.enterText(driver,  subjectField , subject );
-        ActionBot.enterText(driver , messageBox ,message );
+        ActionBot.enterText(driver, emailField ,email);
+        ActionBot.enterText(driver,  subjectField , subject);
+        ActionBot.enterText(driver , messageBox ,message);
         ActionBot.enterText(driver,uploadButton ,file);
         ActionBot.clicking(driver , submitButton);
         ActionBot.acceptAlert(driver);

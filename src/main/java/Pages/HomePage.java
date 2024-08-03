@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage {
 
-    private final WebDriver driver;
+    private  WebDriver driver;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -25,8 +25,7 @@ public class HomePage {
 
     private final By deleteLink         = By.xpath("//a[@href='/delete_account']");
 
-
-
+    private final By productsPageLink           = By.xpath("//a[@href='/products']");
 
                                         //////// Validations //////////
     public HomePage silderInHomePageIsVisible(){
@@ -39,11 +38,16 @@ public class HomePage {
         return this;
     }
 
-                                        //////// Methods //////////
+                                        //////// Links //////////
 
     public LoginPage clickOnSignupLoginLinkButton(){
         ActionBot.clicking(driver, signUpLink);
         return  new LoginPage(driver);
+    }
+
+    public ProductsPage clickTheProductsLink(){
+        ActionBot.clicking(driver , productsPageLink);
+        return new ProductsPage(driver);
     }
 
 
@@ -56,4 +60,6 @@ public class HomePage {
         ActionBot.clicking(driver , deleteLink);
         return new DeletedAccountPage(driver);
     }
+
+
 }

@@ -1,5 +1,4 @@
 package Bots;
-import Pages.SignUpPage;
 import jdk.jfr.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -10,9 +9,12 @@ import java.time.Duration;
 public class ActionBot {
 
     private static WebDriver driver ;
+
+
     static FluentWait wait = new FluentWait<>(driver)
             .withTimeout(Duration.ofSeconds(30))
             .pollingEvery(Duration.ofMillis(250))
+            .ignoring(NoSuchElementException.class)
             .ignoring(NotFoundException.class)
             .ignoring(ElementNotInteractableException.class)
             .ignoring(AssertionError.class)

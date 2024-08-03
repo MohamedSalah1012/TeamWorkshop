@@ -2,6 +2,7 @@ package Pages;
 import Bots.ActionBot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
@@ -64,7 +65,7 @@ public class LoginPage {
 
     public SignUpPage enterUsernameAndEmail(String username , String email){
         ActionBot.enterText(driver , userNameForNewUser , username);
-        ActionBot.enterText( driver , emailForNewUSer ,email);
+        ActionBot.enterText( driver , emailForNewUSer ,email );
         ActionBot.clicking(driver , signUpButton);
         return new SignUpPage(driver);
     }

@@ -1,6 +1,7 @@
 package Pages;
 import Bots.ActionBot;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class SignUpPage {
@@ -52,7 +53,7 @@ public class SignUpPage {
         ActionBot.clicking(driver,newsLetterCheckbox);
         ActionBot.clicking(driver,receiveSpecialOfferCheckbox);
         ActionBot.enterText(driver,firstNameField,fname);
-        ActionBot.enterText(driver,lastName , lname);
+        ActionBot.enterText(driver,lastName , lname );
         ActionBot.enterText(driver,companyField , company);
         ActionBot.enterText(driver,address1 , address);
         ActionBot.findCountryDropdownList( driver , countryDropDownMenu).selectByVisibleText(country);
