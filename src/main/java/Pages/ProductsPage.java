@@ -3,7 +3,6 @@ package Pages;
 import Bots.ActionBot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class ProductsPage {
@@ -21,7 +20,8 @@ public class ProductsPage {
     private final By allProductsText      =   By.xpath("//h2[contains(text() , 'All Products')]");
     private final By searchInput          =   By.xpath("//input[@name='search' and @id='search_product']");
     private final By searchButton         =   By.xpath("//button[@id=\"submit_search\"]");
-    private final By viewProductButton         =   By.xpath("//a[@href='/product_details/1']");
+    private final By viewProductButton    = By.xpath("//li//a[@href=\"/product_details/1\"]");
+    }
 
 
                                  ///////// Validations ///////
@@ -44,16 +44,16 @@ public class ProductsPage {
 
                                  //////// Methods ////////
 
-    @Description(" Enter a product name in the 'search input & click on seach button  ")
+    @Description(" Enter a product name in the 'search input & click on search button  ")
     public SearchResultPage searchForProduct(String product){
         ActionBot.enterText(driver, searchInput, product);
         ActionBot.clicking(driver, searchButton);
         return new SearchResultPage(driver);
     }
 
-    @Description(" Enter a product name in the 'search input & click on seach button  ")
-    public ProductDetailsPage clickOnViewProductOfFirstProduct() {
-        driver.findElement(viewProductButton).click();
+    @Description(" Enter a product name in the 'search input & click on search button  ")
+    public ProductDetailsPage clickOnViewProductButton() {
+        ActionBot.clicking(driver ,viewProductButton);
         return new ProductDetailsPage(driver);
     }
 
