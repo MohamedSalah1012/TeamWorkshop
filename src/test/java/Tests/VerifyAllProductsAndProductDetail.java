@@ -1,18 +1,13 @@
 package Tests;
 
-import Pages.HomePage;
-import Pages.ProductDetailsPage;
-import Pages.ProductsPage;
+import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class VerifyAllProductsAndProductDetail {
     WebDriver driver;
-    String baseUrl ="https://automationexercise.com/";
-
+    String baseUrl ="https://automationexercise.com/" ;
 
 
     @Test(testName = "Verify All Products and product detail page")
