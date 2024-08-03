@@ -1,6 +1,8 @@
 package Tests;
 
 import Pages.HomePage;
+import Pages.ProductDetailsPage;
+import Pages.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -17,10 +19,14 @@ public class VerifyAllProductsAndProductDetail {
     public void productDetails(){
         new HomePage(driver)
                 .silderInHomePageIsVisible()
-                .clickTheProductsLink()
+                .clickTheProductsLink();
+
+        new ProductsPage(driver)
                 .allProdcutsTextIsVisible()
                 .allProdcutsAreaIsVisible()
-                .clickOnViewProductOfFirstProduct()
+                .clickOnViewProductButton();
+
+        new ProductDetailsPage(driver)
                 .productNameIsVisible()
                 .categoryNameIsVisible();
     }

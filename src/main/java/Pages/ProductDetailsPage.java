@@ -13,7 +13,7 @@ public class ProductDetailsPage {
     }
 
 
-    /////// Locators ////////
+                                     /////// Locators ////////
 
 
 
@@ -22,7 +22,7 @@ public class ProductDetailsPage {
 
 
 
-    ///////// Validations ///////
+                                    ///////// Validations ///////
 
 
 
