@@ -3,11 +3,13 @@ package Tests;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 public class ValidLogin {
 
     WebDriver driver;
+    ChromeOptions chromeOptions;
     String baseUrl ="https://automationexercise.com/",
      valid_email = "mo@salah.com", valid_pass = "12345678";
 
@@ -26,7 +28,7 @@ public class ValidLogin {
                 .loginWithValidCredentials(valid_email , valid_pass);
         new HomePage(driver)
                 .verifyLoggedInLabelIsVisible()
-                .clickTheDeleteLink();
+                .clickOnTheDeleteLink();
         new DeletedAccountPage(driver)
                 .deletedAccountTextIsDisplayed();
     }
@@ -39,7 +41,9 @@ public class ValidLogin {
 
     @BeforeClass
     public void setUp(){
-        driver =new ChromeDriver();
+        chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        driver =new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.get(baseUrl);
     }

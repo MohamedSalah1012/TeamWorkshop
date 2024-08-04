@@ -4,11 +4,13 @@ import Pages.*;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 public class NewRegister_NoDelete {
 
     WebDriver driver;
+    ChromeOptions chromeOptions;
     String baseUrl ="https://automationexercise.com/",
     username = "xyz",
     email="xyz@salah.com";
@@ -42,7 +44,9 @@ public class NewRegister_NoDelete {
 
     @BeforeClass
     public void setUp(){
-        driver = new ChromeDriver();
+        chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        driver =new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.get(baseUrl);
     }

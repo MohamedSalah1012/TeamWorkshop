@@ -27,14 +27,13 @@ public class HomePage {
 
     private final By productsPageLink   = By.xpath("//a[@href='/products']");
 
-    private final By subscriptionText   = By.xpath("//h2[contains(text(),\"Subscription\")]");
+    private final By subscriptionHeader = By.xpath("//h2[contains(text(),\"Subscription\")]");
 
-    private final By subscriptionInput       = By.xpath("//input[@id=\"susbscribe_email\"]");
+    private final By subscriptionInput   = By.xpath("//input[@id=\"susbscribe_email\"]");
 
-    private final By submitSubsriptionButton       = By.xpath("//button[@id='subscribe']");
+    private final By submitSubsriptionButton   = By.xpath("//button[@id='subscribe']");
 
 
-    //button[@id='subscribe']
 
                                         //////// Validations //////////
     public HomePage silderInHomePageIsVisible(){
@@ -51,14 +50,14 @@ public class HomePage {
 
 
 
-                                        //////// Links //////////
+                                        //////// Links In Navbar//////////
 
     public LoginPage clickOnSignupLoginLinkButton(){
         ActionBot.clicking(driver, signUpLink);
         return  new LoginPage(driver);
     }
 
-    public ProductsPage clickTheProductsLink(){
+    public ProductsPage clickOnTheProductsLink(){
         ActionBot.clicking(driver , productsPageLink);
         return new ProductsPage(driver);
     }
@@ -69,25 +68,19 @@ public class HomePage {
         return new ContactUsPage(driver);
     }
 
-    public DeletedAccountPage clickTheDeleteLink(){
+    public DeletedAccountPage clickOnTheDeleteLink(){
         ActionBot.clicking(driver , deleteLink);
         return new DeletedAccountPage(driver);
     }
 
 
 
-
-    public HomePage verifyTextAndSubscribe(String email){
-        ActionBot.isVisible(driver , subscriptionText);
+                                         //////// Methods//////////
+    public HomePage verifyTextSubscriptionAndSubscribe(String email){
+        ActionBot.isVisible(driver , subscriptionHeader);
         ActionBot.enterText(driver , subscriptionInput , email );
         ActionBot.clicking(driver , submitSubsriptionButton);
         return this;
     }
-
-
-
-
-
-
 
 }
