@@ -28,4 +28,4 @@ jobs:
           MAVEN_OPTS: "-DskipTests=false"
       - name: Run your automation script
         run: |
-           mvn test -DsuiteXmlFile=src/test/resources/RigsterRunners.xml
+           mvn test -DsuiteXmlFile=src/test/resources/testng/RigsterRunners.xml
