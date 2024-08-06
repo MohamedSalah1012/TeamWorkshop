@@ -12,8 +12,8 @@ public class NewRegister_NoDelete {
     WebDriver driver;
     ChromeOptions chromeOptions;
     String baseUrl ="https://automationexercise.com/",
-    username = "xyz",
-    email="xyz@salah.com";
+    username = "tug",
+    email="tug@salah.com";
 
 
     @Description("This test for register a new user but will not delete the account")
