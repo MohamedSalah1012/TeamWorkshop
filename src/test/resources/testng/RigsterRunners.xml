@@ -3,7 +3,6 @@
     <test name="Tests">
         <classes>
             <class name="Tests.NewRegister_Delete"/>
-<!--             <class name="Tests.NewRegister_NoDelete"/> -->
         </classes>
     </test>
 </suite>
