@@ -36,7 +36,7 @@
                     <version>3.3.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>RegisterRunners.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/RigsterRunners.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
