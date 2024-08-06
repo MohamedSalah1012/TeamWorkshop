@@ -3,6 +3,7 @@ import Bots.ActionBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class SignUpPage {
 
@@ -66,14 +67,17 @@ public class SignUpPage {
     }
 
 
-//    @Description("Find the country dropdown list ")
-//    private Select findCountryDropdownElement() {
-//        return new Select(driver.findElement(countryDropDownMenu));
-//    }
-//
-//    @Description(" Select option from dropdown list")
-//    public SignUpPage select_Country_From_DropDownList(String option) {
-//        findCountryDropdownElement().selectByVisibleText(option);
-//        return this;
-//    }
+/*    @Description("Find the country dropdown list ")
+    private Select findCountryDropdownElement() {
+        return new Select(driver.findElement(countryDropDownMenu));
+    }
+
+    @Description(" Select option from dropdown list")
+    public SignUpPage select_Country_From_DropDownList(String option) {
+        findCountryDropdownElement().selectByVisibleText(option);
+        return this;
+    }*/
+
+
+
 }
