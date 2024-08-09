@@ -21,12 +21,12 @@ public class AccountCreatedPage {
 
 
                                 /////////// Methods ////////////
-    public AccountCreatedPage accountCreatedHeaderisVisible(){
+    public AccountCreatedPage accountCreatedHeaderIsVisible(){
         ActionBot.isVisible(driver ,accountCreatedHeader);
         return this;
     }
 
-    public HomePage clickContinueButton(){
+    public HomePage clickOnContinueButton(){
         ActionBot.clicking(driver ,continueButton);
         return new HomePage(driver);
     }

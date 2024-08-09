@@ -28,8 +28,8 @@ public class NewRegister_Delete {
 
 
         new AccountCreatedPage(driver)
-                .accountCreatedHeaderisVisible()
-                .clickContinueButton();
+                .accountCreatedHeaderIsVisible()
+                .clickOnContinueButton();
 
         new HomePage(driver)
                 .verifyLoggedInLabelIsVisible()

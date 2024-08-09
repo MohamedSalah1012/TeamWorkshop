@@ -34,8 +34,8 @@ public class NewRegister_NoDelete {
 
 
         new AccountCreatedPage(driver)
-                .accountCreatedHeaderisVisible()
-                .clickContinueButton();
+                .accountCreatedHeaderIsVisible()
+                .clickOnContinueButton();
 
         new HomePage(driver)
                 .verifyLoggedInLabelIsVisible();
