@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.HomePage;
 import Pages.TestCasesPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,9 +15,9 @@ public class VerifyTestCasesPage {
 
     @Test(testName = "Verify Test Cases Page")
     public void caseVerifyTestCasesPage(){
-        new TestCasesPage(driver)
-                .goToTestCasesPage()
-                .isTestCaseHeaderVisiable();
+        new HomePage(driver).silderInHomePageIsVisible().clickOnTestcasesLink();
+
+        new TestCasesPage(driver).testCaseHeaderIsVisiable();
     }
 
     @BeforeClass
