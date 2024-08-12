@@ -20,7 +20,7 @@ public class ContactusForm {
     @Test
     public void contactUs(){
         new HomePage(driver)
-                .silderInHomePageIsVisible()
+                .checkSliderInHomePageIsVisible()
                 .clickOnContactUsLink();
 
 
@@ -32,7 +32,7 @@ public class ContactusForm {
                 .successMessageIsVisible()
                 .clickOnTheHomePageButton();
         new HomePage(driver)
-                .silderInHomePageIsVisible();
+                .checkSliderInHomePageIsVisible();
     }
 
 

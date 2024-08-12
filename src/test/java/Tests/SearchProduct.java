@@ -16,7 +16,7 @@ public class SearchProduct {
     @Test(testName = "search product")
     public void search_For_product(){
         new HomePage(driver)
-                .silderInHomePageIsVisible()
+                .checkSliderInHomePageIsVisible()
                 .clickOnTheProductsLink();
         new ProductsPage(driver)
                 .allProdcutsTextIsVisible()
