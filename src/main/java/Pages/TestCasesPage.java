@@ -14,9 +14,7 @@ public class TestCasesPage {
 
     /////////// Locators //////////
 
-    By testCaseHeader = By.xpath("//span[contains(text(), 'Test')]");
-    By belowIsTheListHeader = By.xpath("//span[contains(text(), 'Below is the list of ')]");
-
+    By testCaseHeader = By.xpath("//b//span[contains(text(), 'Test')]");
 
     /////////// Methods //////////
 
@@ -24,6 +22,4 @@ public class TestCasesPage {
         ActionBot.isVisible(driver,testCaseHeader);
     }
 
-    public void belowIsTheListHeaderIsVisiable(){ActionBot.isVisible(driver, belowIsTheListHeader);}
-    
 }
