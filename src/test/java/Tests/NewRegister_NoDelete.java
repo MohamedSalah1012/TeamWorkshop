@@ -20,7 +20,7 @@ public class NewRegister_NoDelete {
     @Test( testName = " Register as a new user - with No delete account ")
     public void newRegister() {
         new HomePage(driver)
-                .silderInHomePageIsVisible()
+                .checkSliderInHomePageIsVisible()
                 .clickOnSignupLoginLinkButton();
 
         new LoginPage(driver)

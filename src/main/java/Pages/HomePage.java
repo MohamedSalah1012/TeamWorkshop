@@ -1,15 +1,20 @@
 package Pages;
 import Bots.ActionBot;
+import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 
 public class HomePage {
 
     private  WebDriver driver;
+    public static final String expectedHomePageUrl = "https://automationexercise.com/";
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
+
+
 
 
 
@@ -36,16 +41,22 @@ public class HomePage {
 
 
                                         //////// Validations //////////
-    public HomePage silderInHomePageIsVisible(){
-        ActionBot.isVisible(driver,silder);
+
+    public HomePage checkThePageUrlIsValid(){
+       if(!driver.getCurrentUrl().equals(expectedHomePageUrl))
+        throw new IllegalStateException("The expected url is: " + expectedHomePageUrl + "but we found another url");
         return this;
+    }
+
+    public HomePage checkSliderInHomePageIsVisible(){
+        ActionBot.isVisible(driver,silder);
+         return this;
     }
 
     public HomePage verifyLoggedInLabelIsVisible(){
         ActionBot.isVisible(driver , loggedInAsLabel);
         return this;
     }
-
 
 
 
@@ -72,6 +83,10 @@ public class HomePage {
         ActionBot.clicking(driver , deleteLink);
         return new DeletedAccountPage(driver);
     }
+
+
+
+
 
 
 

@@ -3,18 +3,21 @@ import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert.*;
 import org.testng.annotations.*;
 
 public class NewRegister_Delete {
 
     WebDriver driver;
     ChromeOptions chromeOptions;
-    String baseUrl ="https://automationexercise.com/";
 
     @Test( testName = " Register as a new user and delete account ")
     public void newRegister(){
+
+
         new HomePage(driver)
-                .silderInHomePageIsVisible()
+                .checkThePageUrlIsValid()
+                .checkSliderInHomePageIsVisible()
                 .clickOnSignupLoginLinkButton();
 
         new LoginPage(driver)
@@ -37,6 +40,7 @@ public class NewRegister_Delete {
 
         new DeletedAccountPage(driver)
                 .deletedAccountTextIsDisplayed();
+
     }
 
 
@@ -45,11 +49,11 @@ public class NewRegister_Delete {
 
     @BeforeClass
     public void setUp(){
-        chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-        driver =new ChromeDriver(chromeOptions);
+//        chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--headless");
+        driver =new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(baseUrl);
+        driver.navigate().to(HomePage.expectedHomePageUrl);
     }
 
 

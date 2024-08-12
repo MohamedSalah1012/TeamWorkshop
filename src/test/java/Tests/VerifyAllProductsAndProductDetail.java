@@ -15,7 +15,7 @@ public class VerifyAllProductsAndProductDetail {
     @Test(testName = "Verify All Products and product detail page")
     public void productDetails(){
         new HomePage(driver)
-                .silderInHomePageIsVisible()
+                .checkSliderInHomePageIsVisible()
                 .clickOnTheProductsLink();
 
         new ProductsPage(driver)

@@ -18,9 +18,9 @@ public class SubscriptionTest {
     @Test(testName = "Verify subscription in home page")
     public void subscribe(){
         new HomePage(driver)
-                .silderInHomePageIsVisible()
+                .checkSliderInHomePageIsVisible()
                 .verifyTextSubscriptionAndSubscribe(subscribedEmail)
-                .silderInHomePageIsVisible();
+                .checkSliderInHomePageIsVisible();
     }
 
 
