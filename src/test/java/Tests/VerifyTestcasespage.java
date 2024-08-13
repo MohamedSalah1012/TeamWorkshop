@@ -4,18 +4,17 @@ import Pages.HomePage;
 import Pages.TestCasesPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class VerifyTestCasesPage {
+public class VerifyTestcasespage {
     WebDriver driver;
     String baseUrl ="https://automationexercise.com/";
 
     @Test(testName = "Verify Test Cases Page")
     public void caseVerifyTestCasesPage(){
-        new HomePage(driver).silderInHomePageIsVisible().clickOnTestcasesLink();
+        new HomePage(driver).checkSliderInHomePageIsVisible().clickOnTestcasesLink();
 
         new TestCasesPage(driver).testCaseHeaderIsVisiable();
     }

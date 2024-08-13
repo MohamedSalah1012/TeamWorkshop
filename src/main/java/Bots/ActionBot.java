@@ -11,6 +11,9 @@ public class ActionBot {
     private static WebDriver driver ;
 
 
+
+
+
      static FluentWait wait = new FluentWait<>(driver)
             .withTimeout(Duration.ofSeconds(30))
             .pollingEvery(Duration.ofMillis(250))
