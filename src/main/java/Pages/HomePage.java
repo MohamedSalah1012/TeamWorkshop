@@ -38,6 +38,7 @@ public class HomePage {
 
     private final By submitSubsriptionButton   = By.xpath("//button[@id='subscribe']");
 
+    private final By testCasesLink = By.xpath("(//a[@href='/test_cases'])[1]");
 
 
                                         //////// Validations //////////
@@ -82,6 +83,11 @@ public class HomePage {
     public DeletedAccountPage clickOnTheDeleteLink(){
         ActionBot.clicking(driver , deleteLink);
         return new DeletedAccountPage(driver);
+    }
+
+    public TestCasesPage clickOnTestcasesLink(){
+        ActionBot.clicking(driver, testCasesLink);
+        return new TestCasesPage(driver);
     }
 
 
