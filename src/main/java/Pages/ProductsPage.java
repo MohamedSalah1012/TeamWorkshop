@@ -12,6 +12,8 @@ public class ProductsPage {
     private  Actions actions;
 
 
+
+
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
     }

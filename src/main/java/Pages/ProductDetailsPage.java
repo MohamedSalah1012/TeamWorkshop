@@ -49,6 +49,7 @@ public class ProductDetailsPage {
        return new ProductDetailsPage(driver);
     }
 
+
     public ProductDetailsPage clickOnAddToCart(){
         ActionBot.clicking(driver,addToCartButton);
         return new ProductDetailsPage(driver);

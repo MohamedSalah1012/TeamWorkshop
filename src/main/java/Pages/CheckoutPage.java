@@ -28,6 +28,7 @@ public class CheckoutPage {
         return By.xpath("//tr[@id='product-"+productOrder+"']/td[@class='cart_price']/p");
     }
 
+
     //product quantity by product number (order) in table
     private By productQantity(int productOrder){
         return By.xpath("//tr[@id='product-"+productOrder+"']/td[@class='cart_quantity']/button");

@@ -68,6 +68,7 @@ public class VerifyCartCases {
 
     }
 
+
     @BeforeClass
     public void setUp(){
         driver =new ChromeDriver();

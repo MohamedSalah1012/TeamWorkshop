@@ -21,6 +21,7 @@ public class PaymentPage {
     private By expiryMonth          = By.xpath("//input[@name='expiry_month']");
     private By expiryYear           = By.xpath("//input[@name='expiry_year']");
 
+
     private By payAndConfirmButton  = By.xpath("//button[@id='submit']");
 
 
