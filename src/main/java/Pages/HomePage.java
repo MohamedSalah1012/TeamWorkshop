@@ -1,6 +1,5 @@
 package Pages;
 import Bots.ActionBot;
-import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -40,6 +39,10 @@ public class HomePage {
 
     private final By testCasesLink = By.xpath("(//a[@href='/test_cases'])[1]");
 
+    //Xpath to get view product button of items in home page by item order
+    private By viewProductButton(int productOrder){
+        return By.xpath("//a[@href='/product_details/"+productOrder+"']");
+    }
 
                                         //////// Validations //////////
 
@@ -102,6 +105,11 @@ public class HomePage {
         ActionBot.enterText(driver , subscriptionInput , email );
         ActionBot.clicking(driver , submitSubsriptionButton);
         return this;
+    }
+
+    public ProductDetailsPage clickOnviewProductButton(int productOrder){
+        ActionBot.clicking(driver,viewProductButton(productOrder));
+        return new ProductDetailsPage(driver);
     }
 
 }
