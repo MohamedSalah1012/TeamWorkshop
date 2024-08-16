@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.CartPage;
 import Pages.HomePage;
+import Pages.ProductDetailsPage;
 import Pages.ProductsPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,16 +18,15 @@ public class VerifyCartCases {
     @Test(testName = "Verify adding products in cart")
     public void addProductInCart(){
         HomePage homePage = new HomePage(driver);
-        ProductsPage productsPage = new ProductsPage(driver);
-        CartPage cartPage = new CartPage(driver);
-
         homePage.checkSliderInHomePageIsVisible();
         homePage.clickOnTheProductsLink();
 
+        ProductsPage productsPage = new ProductsPage(driver);
         productsPage.addProducttoCart(1).clickOnContinueShopping();
         productsPage.addProducttoCart(2).clickOnViewCart();
 
         //Verify that items added
+        CartPage cartPage = new CartPage(driver);
         String productAdded = cartPage.getItemDesciptionByItemOrder(1);
         Assert.assertEquals(productAdded, "Blue Top");
         productAdded = cartPage.getItemDesciptionByItemOrder(2);
@@ -49,6 +49,22 @@ public class VerifyCartCases {
         Assert.assertEquals(productTotalPrice,"Rs. 500");
         productTotalPrice = cartPage.getItemTotalPriceByItemOrder(2);
         Assert.assertEquals(productTotalPrice,"Rs. 400");
+
+    }
+
+    @Test(testName = "Verify product quantity in cart")
+    public void verifyProductQuantity(){
+        HomePage homePage = new HomePage(driver);
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver);
+        CartPage cartPage = new CartPage(driver);
+
+        homePage.checkSliderInHomePageIsVisible()
+            .clickOnviewProductButton(1)
+                .changeProductQuantity("4")
+                .clickOnAddToCart()
+                .clickOnviewCart();
+        String quantity = cartPage.getItemQuantityByItemOrder(1);
+        Assert.assertEquals(quantity,"4");
 
     }
 
