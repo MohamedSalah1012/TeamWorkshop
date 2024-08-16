@@ -17,7 +17,7 @@ public class ProductsPage {
     }
 
 
-                                    /////// Locators ////////
+    /////// Locators ////////
 
 
     private final By allProductsArea      =   By.xpath("//div[@class='features_items']");
@@ -41,7 +41,7 @@ public class ProductsPage {
         return By.xpath("//a[@data-product-id="+productOrder+"]");
     }
 
-                                 ///////// Validations ///////
+    ///////// Validations ///////
 
     @Description("check that  'All products' text is displayed ")
     public ProductsPage allProdcutsTextIsVisible(){
@@ -59,7 +59,7 @@ public class ProductsPage {
 
 
 
-                                 //////// Methods ////////
+    //////// Methods ////////
 
     @Description(" Enter a product name in the 'search input & click on search button  ")
     public SearchResultPage searchForProduct(String product){
