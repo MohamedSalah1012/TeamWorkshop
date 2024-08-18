@@ -34,14 +34,28 @@ public class ProductsPage {
     private final By confirmationMessage  =   By.xpath("//div/div[@class='modal-body']//p[text()='Your product has been added to cart.']");
     private final By viewCartButton       =   By.xpath("//div//u[text()='View Cart']");
     private final By continueShoppingButton = By.xpath("//div//button[text()='Continue Shopping']");
+
+
     //find product By product order in page
     private By productByOrderinPage (int productOrder){
         return By.xpath("(//div[@class='single-products'])["+productOrder+"]");
     }
+
     //add to cart button (after hovering) of product by order in page
     private By addTocartButton(int productOrder){
         return By.xpath("//a[@data-product-id="+productOrder+"]");
     }
+
+    //product name in products page
+    public static By productName(int productOrder) {
+        return By.xpath("((//div[@class='single-products'])["+productOrder+"]//p)[1]");
+    }
+
+    //product price in products page
+    public static By productPrice(int productOrder){
+        return By.xpath("((//div[@class='single-products'])["+productOrder+"]//h2)[1]");
+    }
+
 
     ///////// Validations ///////
 
@@ -77,15 +91,19 @@ public class ProductsPage {
     }
 
     @Description(" Add product to cart by hovering over product by product order in page and click continue to shopping ")
-    public ProductsPage addProducttoCart(int productOrder){
-
+    public ProductsPage hoverAndClickAddProductToCart(int productOrder){
         actions = new Actions(driver);
         WebElement elementToHover = driver.findElement(productByOrderinPage(productOrder));
         WebElement buttonAfterHover = driver.findElement(addTocartButton(productOrder));
         actions.moveToElement(elementToHover).moveToElement(buttonAfterHover).click().perform();
-        return new ProductsPage(driver);
+        return this;
     }
 
+    @Description(" Add product to cart by click directly on add to cart")
+    public ProductsPage directClickAddProductToCart(int productOrder){
+      ActionBot.clicking(driver,addTocartButton(productOrder));
+      return this;
+    }
 
     public ProductsPage clickOnContinueShopping() {
         ActionBot.clicking(driver ,continueShoppingButton);
@@ -96,7 +114,5 @@ public class ProductsPage {
         ActionBot.clicking(driver ,viewCartButton);
         return new CartPage(driver);
     }
-
-
 
 }

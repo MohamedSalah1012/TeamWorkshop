@@ -2,6 +2,8 @@ package Pages;
 import Bots.ActionBot;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.testng.Assert;
+
 import java.time.Duration;
 import java.util.List;
 public class CartPage {
@@ -46,21 +48,26 @@ public class CartPage {
         List<WebElement> cartItems = driver.findElements(tableElements);
         return cartItems.size();
     }
-    public String getItemDesciptionByItemOrder(int itemOrder){
-        WebElement item = driver.findElement(productDescription(itemOrder));
-        return item.getText();
+    public CartPage getItemDesciptionByItemOrder(int itemOrder,String expectedName){
+        String actualName   = driver.findElement(productDescription(itemOrder)).getText();
+       Assert.assertEquals(actualName,expectedName,"actual item name added from products page is not equal to expected item name into the cart");
+       return this;
     }
-    public String getItemPriceByItemOrder(int itemOrder){
-        WebElement item = driver.findElement(productPrice(itemOrder));
-        return item.getText();
+    public CartPage getItemPriceByItemOrder(int itemOrder,String expectedPrice){
+     String actualPrice    = driver.findElement(productPrice(itemOrder)).getText();
+     Assert.assertEquals(actualPrice,expectedPrice,"actual item price added from products is not equal to expected item into the cart");
+     return this;
     }
-    public String getItemQuantityByItemOrder(int itemOrder){
-        WebElement item = driver.findElement(productQantity(itemOrder));
-        return item.getText();
+    public CartPage getItemQuantityByItemOrder(int itemOrder,String expectedQuantity){
+
+        String actualQuantity  = driver.findElement(productQantity(itemOrder)).getText();
+        Assert.assertEquals(actualQuantity,expectedQuantity,"actual item quantity added is not equal expected item quantity");
+        return this;
     }
-    public String getItemTotalPriceByItemOrder(int itemOrder){
-        WebElement item = driver.findElement(productTotalPrice(itemOrder));
-        return item.getText();
+    public CartPage getItemTotalPriceByItemOrder(int itemOrder,String expectedTotalPrice){
+       String actualTotalPrice = driver.findElement(productTotalPrice(itemOrder)).getText();
+       Assert.assertEquals(actualTotalPrice,expectedTotalPrice,"actual item total price added is not equal expected item total price");
+       return this;
     }
     public CartPage deleteItemByOrder(int itemOrder){
         ActionBot.clicking(driver,deleteProduct(itemOrder));
