@@ -31,4 +31,4 @@ jobs:
         env:
           MAVEN_OPTS: "-DskipTests=false"
         run: |
-          mvn test -DsuiteXmlFile=src/test/resources/testng/RigsterRunners.xml
+          mvn test -DsuiteXmlFile=src/test/resources/testng/AddToCart.xml
