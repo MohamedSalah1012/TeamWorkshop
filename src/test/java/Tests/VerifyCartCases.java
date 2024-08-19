@@ -3,9 +3,7 @@ package Tests;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class VerifyCartCases {
     WebDriver driver;
@@ -45,14 +43,14 @@ public class VerifyCartCases {
     }
 
 
-    @BeforeClass
+    @BeforeMethod
     public void setUp(){
         driver =new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(baseUrl);
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown(){
         driver.quit();
     }
