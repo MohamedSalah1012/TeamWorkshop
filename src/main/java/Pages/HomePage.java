@@ -35,6 +35,7 @@ public class HomePage {
             throw new IllegalStateException("The expected url is: " + expectedHomePageUrl + "but we found another url");
         return this;
     }
+
     public HomePage checkSliderInHomePageIsVisible(){
         ActionBot.isVisible(driver,silder);
         return this;
