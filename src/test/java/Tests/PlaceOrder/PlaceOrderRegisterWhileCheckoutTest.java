@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 public class PlaceOrderRegisterWhileCheckoutTest {
 
     private WebDriver driver;
-    private String baseUrl ="https://automationexercise.com/";
+    private final String baseUrl ="https://automationexercise.com/";
 
 
 

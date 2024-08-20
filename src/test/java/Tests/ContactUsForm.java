@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
-public class ContactusForm {
+public class ContactUsForm {
 
    private WebDriver driver;
     ChromeOptions chromeOptions;
