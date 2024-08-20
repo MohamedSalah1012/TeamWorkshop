@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 
 public class ContactusForm {
 
-    WebDriver driver;
+   private WebDriver driver;
     ChromeOptions chromeOptions;
     String baseUrl ="https://automationexercise.com/";
     String name = "Mohamed",   email= "mohamed@test.com" ,subject= "complain", message=" i do complain",

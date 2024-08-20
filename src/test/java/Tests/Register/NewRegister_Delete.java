@@ -1,4 +1,4 @@
-package Tests;
+package Tests.Register;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -29,7 +29,7 @@ public class NewRegister_Delete {
                                  ,"Canada","giza","cairo","1565","01232652547");
 
 
-        new AccountCreatedPage(driver)
+        new AfterCreateAccountPage(driver)
                 .accountCreatedHeaderIsVisible()
                 .clickOnContinueButton();
 
@@ -38,7 +38,7 @@ public class NewRegister_Delete {
                 .clickOnTheDeleteLink();
 
         new AfterDeleteAccountPage(driver)
-                .deletedAccountTextIsDisplayed();
+                .deletedAccountHeaderIsDisplayed();
 
     }
 

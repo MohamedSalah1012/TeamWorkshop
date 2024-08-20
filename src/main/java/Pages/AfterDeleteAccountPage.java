@@ -20,7 +20,7 @@ public class AfterDeleteAccountPage {
 
                                     /////////// Validations //////////
 
-    public AfterDeleteAccountPage deletedAccountTextIsDisplayed(){
+    public AfterDeleteAccountPage deletedAccountHeaderIsDisplayed(){
         ActionBot.isVisible(driver , accountDeletedHeader);
         return this;
     }

@@ -1,9 +1,7 @@
 package Pages;
 import Bots.ActionBot;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class SignUpPage {
 
@@ -48,7 +46,7 @@ public class SignUpPage {
 
 
 
-    public AccountCreatedPage signUpNewAccount(String titleGender, String password, String fname, String lname, String company , String address, String country, String state , String city , String zipcode, String mobilenumber){
+    public AfterCreateAccountPage signUpNewAccount(String titleGender, String password, String fname, String lname, String company , String address, String country, String state , String city , String zipcode, String mobilenumber){
         ActionBot.clicking(driver , title(titleGender));
         ActionBot.enterText(driver ,passwordField, password);
         ActionBot.clicking(driver,newsLetterCheckbox);
@@ -63,20 +61,20 @@ public class SignUpPage {
         ActionBot.enterText(driver , zipcodeField , zipcode);
         ActionBot.enterText(driver , mobileNumberField ,mobilenumber);
         ActionBot.clicking(driver , createAccountButton );
-        return new AccountCreatedPage(driver);
+        return new AfterCreateAccountPage(driver);
     }
 
 
-/*    @Description("Find the country dropdown list ")
-    private Select findCountryDropdownElement() {
-        return new Select(driver.findElement(countryDropDownMenu));
-    }
-
-    @Description(" Select option from dropdown list")
-    public SignUpPage select_Country_From_DropDownList(String option) {
-        findCountryDropdownElement().selectByVisibleText(option);
-        return this;
-    }*/
+// @Description("Find the country dropdown list ")
+//    private Select findCountryDropdownElement() {
+//        return new Select(driver.findElement(countryDropDownMenu));
+//    }
+//
+//    @Description(" Select option from dropdown list")
+//    public SignUpPage select_Country_From_DropDownList(String option) {
+//        findCountryDropdownElement().selectByVisibleText(option);
+//        return this;
+//    }*/
 
 
 

@@ -1,4 +1,4 @@
-package Tests;
+package Tests.Login;
 
 import Pages.*;
 import org.openqa.selenium.WebDriver;
@@ -30,7 +30,7 @@ public class ValidLogin {
                 .verifyLoggedInLabelIsVisible()
                 .clickOnTheDeleteLink();
         new AfterDeleteAccountPage(driver)
-                .deletedAccountTextIsDisplayed();
+                .deletedAccountHeaderIsDisplayed();
     }
 
 

@@ -23,7 +23,7 @@ public class SearchProduct {
                 .allProdcutsAreaIsVisible()
                 .searchForProduct(targetedProduct);
         new SearchResultPage(driver)
-                .searchedProductsTextIsVisible();
+                .searchedProductsHeaderIsVisible();
     }
 
 

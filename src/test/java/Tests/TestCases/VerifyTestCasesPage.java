@@ -1,4 +1,4 @@
-package Tests;
+package Tests.TestCases;
 
 import Pages.HomePage;
 import Pages.TestCasesPage;
