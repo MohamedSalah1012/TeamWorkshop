@@ -1,25 +1,29 @@
 package Pages;
 import Bots.ActionBot;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
 
-import java.time.Duration;
 import java.util.List;
 public class CartPage {
     private static WebDriver driver;
     public CartPage(WebDriver driver){
         this.driver = driver;
     }
-    ///////////// Locators ///////////////
+
+
+                                    ///////////// Locators ///////////////
     private final By shoppingCart        = By.xpath("//li[text() = 'Shopping Cart']");
     private final By checkOutButton      = By.xpath("//a[text()='Proceed To Checkout']");
     private final By tableElements       = By.xpath("//tbody/tr");
+
+
     //checkoutPopup
     private final By checkoutHeader      = By.xpath("//div//h4[text()='Checkout']");
-    private final By registerOrLogin     = By.xpath("//div//p/a[@href='/login']");
+    private final By registerOrLogin     = By.xpath("//a/u[contains(text() , 'Register / Login')]");
     private final By continueToCart      = By.xpath("//div//button[text()='Continue On Cart']");
-    //product Description by product number (order) in table
+    private final By addressDetailsHeader = By.xpath("//h2[text()='Address Details']");
+    private final By reviewYourOrderHeader = By.xpath("//h2[text()='Review Your Order']");
+
     private By productDescription(int productOrder){
         return By.xpath("//tr[@id='product-"+productOrder+"']/td/h4");
     }
@@ -39,11 +43,24 @@ public class CartPage {
     private By deleteProduct(int productOrder){
         return By.xpath("//tr[@id='product-"+productOrder+"']//td//a[@class='cart_quantity_delete']");
     }
-    //////////// Methods //////////////////
-    public CartPage verfyShoppingCartText(){
+                                            //////////// Validations //////////////////
+
+    public CartPage verifyAddressDetailsHeader(){
+        ActionBot.isVisible(driver , addressDetailsHeader);
+        return this;
+    }
+
+    public CartPage verifyReviewYourOrderHeader(){
+        ActionBot.isVisible(driver , reviewYourOrderHeader);
+        return this;
+    }
+
+    public CartPage verifyShoppingCartText(){
         ActionBot.isVisible(driver,shoppingCart);
         return this;
     }
+
+                                            //////////// Methods //////////////////
     public int getProductNumberinCart(){
         List<WebElement> cartItems = driver.findElements(tableElements);
         return cartItems.size();
@@ -76,5 +93,10 @@ public class CartPage {
     public CartPage proceedToCheckoutWithoutLoggedInUser(){
         ActionBot.clicking(driver,checkOutButton);
         return this;
+    }
+
+    public LoginPage clickOnRegisterLink(){
+        ActionBot.clicking(driver ,registerOrLogin );
+        return new LoginPage(driver);
     }
 }

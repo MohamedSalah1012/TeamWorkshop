@@ -3,7 +3,6 @@ import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.Assert.*;
 import org.testng.annotations.*;
 
 public class NewRegister_Delete {
@@ -22,7 +21,7 @@ public class NewRegister_Delete {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .enterUsernameAndEmail("new6" , "new6@user6.com" );
+                .enterUsernameAndEmailAndClickSignUp("new6" , "new6@user6.com" );
 
         new SignUpPage(driver)
                 .signUpNewAccount("Mr","12345678","mohamed"
@@ -38,7 +37,7 @@ public class NewRegister_Delete {
                 .verifyLoggedInLabelIsVisible()
                 .clickOnTheDeleteLink();
 
-        new DeletedAccountPage(driver)
+        new AfterDeleteAccountPage(driver)
                 .deletedAccountTextIsDisplayed();
 
     }

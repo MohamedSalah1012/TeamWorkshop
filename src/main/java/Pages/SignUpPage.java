@@ -57,7 +57,7 @@ public class SignUpPage {
         ActionBot.enterText(driver,lastName , lname );
         ActionBot.enterText(driver,companyField , company);
         ActionBot.enterText(driver,address1 , address);
-        ActionBot.findCountryDropdownList( driver , countryDropDownMenu).selectByVisibleText(country);
+        ActionBot.findCountryDropdownList( driver , countryDropDownMenu).selectByIndex(1);
         ActionBot.enterText(driver ,stateField ,state);
         ActionBot.enterText(driver , cityField , city);
         ActionBot.enterText(driver , zipcodeField , zipcode);

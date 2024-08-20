@@ -2,7 +2,6 @@ package Pages;
 import Bots.ActionBot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
@@ -22,7 +21,7 @@ public class LoginPage {
     private final By newUserSignUpHeader    = By.xpath("//h2[text()='New User Signup!']");
     private final By userNameForNewUser     = By.xpath("//input[@type='text']");
     private final By emailForNewUSer        = By.xpath("(//input[@type = 'email' and @name='email'])[2]");
-    private final By signUpButton           = By.xpath("/html/body/section/div/div/div[3]/div/form/button");
+    private final By signUpButton           = By.xpath("//button[@type = 'submit' and text()='Signup']");
 
     @Description("These locators for the 'login' section ")
     private final By loginHeader = By.xpath("//h2[text()='Login to your account']");
@@ -63,7 +62,7 @@ public class LoginPage {
 
 
 
-    public SignUpPage enterUsernameAndEmail(String username , String email){
+    public SignUpPage enterUsernameAndEmailAndClickSignUp(String username , String email){
         ActionBot.enterText(driver , userNameForNewUser , username);
         ActionBot.enterText( driver , emailForNewUSer ,email );
         ActionBot.clicking(driver , signUpButton);

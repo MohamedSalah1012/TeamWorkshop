@@ -25,7 +25,7 @@ public class NewRegister_NoDelete {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .enterUsernameAndEmail(username , email);
+                .enterUsernameAndEmailAndClickSignUp(username , email);
 
         new SignUpPage(driver)
                 .signUpNewAccount("Mr","12345678","ahmed"

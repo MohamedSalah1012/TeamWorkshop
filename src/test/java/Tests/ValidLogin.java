@@ -29,7 +29,7 @@ public class ValidLogin {
         new HomePage(driver)
                 .verifyLoggedInLabelIsVisible()
                 .clickOnTheDeleteLink();
-        new DeletedAccountPage(driver)
+        new AfterDeleteAccountPage(driver)
                 .deletedAccountTextIsDisplayed();
     }
 

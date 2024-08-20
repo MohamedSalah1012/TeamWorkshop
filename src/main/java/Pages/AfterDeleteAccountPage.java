@@ -4,10 +4,10 @@ import Bots.ActionBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DeletedAccountPage {
+public class AfterDeleteAccountPage {
     private final WebDriver driver;
 
-    public DeletedAccountPage(WebDriver driver) {
+    public AfterDeleteAccountPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -15,13 +15,21 @@ public class DeletedAccountPage {
 
                                     /////////// Locators //////////
     private final By accountDeletedHeader       = By.xpath("//h2[@data-qa='account-deleted']/b");
+    private final By continueButton             = By.xpath("//a[@href='/' and @data-qa=\"continue-button\"]");
 
 
                                     /////////// Validations //////////
 
-    public DeletedAccountPage deletedAccountTextIsDisplayed(){
+    public AfterDeleteAccountPage deletedAccountTextIsDisplayed(){
         ActionBot.isVisible(driver , accountDeletedHeader);
         return this;
+    }
+
+
+
+    public HomePage clickOnContinueButton(){
+        ActionBot.clicking(driver , continueButton);
+        return new HomePage(driver);
     }
 
 }

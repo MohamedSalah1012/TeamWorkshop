@@ -1,6 +1,5 @@
 package Pages;
 import Bots.ActionBot;
-import dev.failsafe.internal.util.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,6 +16,7 @@ public class HomePage {
     private final By loggedInAsLabel    = By.xpath("//li//a[contains(text(),' Logged in as ')]");
     private final By deleteLink         = By.xpath("//a[@href='/delete_account']");
     private final By productsPageLink   = By.xpath("//a[@href='/products']");
+    private final By cartLink           = By.xpath("//a[@href='/view_cart' and text()=' Cart']");
     private final By subscriptionHeader = By.xpath("//h2[contains(text(),\"Subscription\")]");
     private final By subscriptionInput   = By.xpath("//input[@id=\"susbscribe_email\"]");
     private final By submitSubsriptionButton   = By.xpath("//button[@id='subscribe']");
@@ -44,7 +44,10 @@ public class HomePage {
         ActionBot.isVisible(driver , loggedInAsLabel);
         return this;
     }
-    //////// Links In Navbar//////////
+
+
+                                        //////// Links In Navbar//////////
+
     public LoginPage clickOnSignupLoginLinkButton(){
         ActionBot.clicking(driver, signUpLink);
         return  new LoginPage(driver);
@@ -53,18 +56,27 @@ public class HomePage {
         ActionBot.clicking(driver , productsPageLink);
         return new ProductsPage(driver);
     }
+
+
+    public CartPage clickOnTheCartLink(){
+        ActionBot.clicking(driver , cartLink);
+        return new CartPage(driver);
+    }
     public ContactUsPage clickOnContactUsLink(){
         ActionBot.clicking(driver, contactUsLink);
         return new ContactUsPage(driver);
     }
-    public DeletedAccountPage clickOnTheDeleteLink(){
+    public AfterDeleteAccountPage clickOnTheDeleteLink(){
         ActionBot.clicking(driver , deleteLink);
-        return new DeletedAccountPage(driver);
+        return new AfterDeleteAccountPage(driver);
     }
     public TestCasesPage clickOnTestcasesLink(){
         ActionBot.clicking(driver, testCasesLink);
         return new TestCasesPage(driver);
     }
+
+
+
     //////// Methods//////////
     public HomePage verifyTextSubscriptionAndSubscribe(String email){
         ActionBot.isVisible(driver , subscriptionHeader);
