@@ -28,7 +28,7 @@ public class PlaceOrderRegisterWhileCheckoutTest {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .enterUsernameAndEmailAndClickSignUp("uiyuiy" , "uiyuiy@test.com");
+                .enterUsernameAndEmailAndClickSignUp("safa" , "safa@test.com");
 
         new SignUpPage(driver)
                 .signUpNewAccount("Mr" , "12345678","mohamed" , "salah","test",
@@ -49,14 +49,15 @@ public class PlaceOrderRegisterWhileCheckoutTest {
                 .enterYourCredentials("test","1649898","123","12","2026");
 
         new AfterPaymentPage(driver)
-                .verifyAfterPaymentSuccessMessageIsDisplayed();
+                .verifyAfterPaymentSuccessMessageIsDisplayed("Congratulations! Your order has been confirmed!");
 
         new HomePage(driver)
                 .clickOnTheDeleteLink();
 
         new AfterDeleteAccountPage(driver)
                 .deletedAccountTextIsDisplayed()
-                .clickOnContinueButton();
+                .clickOnContinueButton()
+                .checkSliderInHomePageIsVisible();
     }
 
 

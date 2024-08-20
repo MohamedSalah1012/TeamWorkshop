@@ -17,8 +17,8 @@ public class AfterPaymentPage {
 
 
 
-    public AfterPaymentPage verifyAfterPaymentSuccessMessageIsDisplayed(){
-        String expectedMessage = "Congratulations! Your order has been confirmed!";
+    public AfterPaymentPage verifyAfterPaymentSuccessMessageIsDisplayed(String expectedMessage ){
+//        String expectedMessage = "Congratulations! Your order has been confirmed!";
         String actualMessage = driver.findElement(afterPaymentSuccessedMessage).getText();
         Assert.assertTrue(actualMessage.contains(expectedMessage));
         return this;
