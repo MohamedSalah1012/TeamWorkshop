@@ -1,34 +1,35 @@
-name: CI Runner
+name: Run Tests
+
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Install Java and Maven
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chrome] # Adjust browsers as needed
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 11
         uses: actions/setup-java@v3
         with:
           java-version: '21'
           distribution: 'adopt'
 
-      - name: Set up Maven 3.9.5
-        uses: stCarolas/setup-maven@v4.5
-        with:
-          maven-version: '3.9.5'
-
-      - name: Cache Maven packages
+      - name: Set up Maven Cache
         uses: actions/cache@v3
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven-
 
-      - name: Run your automation script
-        env:
-          MAVEN_OPTS: "-DskipTests=false"
-        run: |
-          mvn test -DsuiteXmlFile=src/test/resources/testng/AddToCart.xml
+      - name: Run tests on ${{ matrix.browser }}
+        run: mvn -Dtest=src/test/java/Tests/PlaceOrder/PlaceOrderRegisterWhileCheckoutTest.java -Dbrowser=${{ matrix.browser }} test
