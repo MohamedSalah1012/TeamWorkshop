@@ -20,7 +20,7 @@ public class SearchResultPage {
 
 
     @Description(" check that the text is displayed after the search ")
-    public SearchResultPage searchedProductsTextIsVisible(){
+    public SearchResultPage searchedProductsHeaderIsVisible(){
         driver.findElement(searchedProductsText).isDisplayed();
         return this;
     }

@@ -2,8 +2,8 @@
 <suite name="Suite" parallel="classes">
     <test name="Tests">
         <classes>
-            <class name="Tests.ValidLogin"/>
-            <class name="Tests.Invalidlogin"/>
+            <class name="Tests.Login.ValidLogin"/>
+            <class name="Tests.Login.Invalidlogin"/>
         </classes>
     </test>
 </suite>

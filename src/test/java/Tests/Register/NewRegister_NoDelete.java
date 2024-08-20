@@ -1,4 +1,4 @@
-package Tests;
+package Tests.Register;
 
 import Pages.*;
 import jdk.jfr.Description;
@@ -33,7 +33,7 @@ public class NewRegister_NoDelete {
                         ,"Canada","giza","cairo","1565","01232652547");
 
 
-        new AccountCreatedPage(driver)
+        new AfterCreateAccountPage(driver)
                 .accountCreatedHeaderIsVisible()
                 .clickOnContinueButton();
 

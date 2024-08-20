@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="classes">
     <test name="Tests">
         <classes>
-            <class name="Tests.Cart.VerifyCartCases"/>
+            <class name="Tests.PlaceOrder.PlaceOrderRegisterWhileCheckoutTest"/>
         </classes>
     </test>
 </suite>

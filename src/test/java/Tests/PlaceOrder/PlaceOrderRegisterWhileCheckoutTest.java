@@ -1,4 +1,4 @@
-package Tests;
+package Tests.PlaceOrder;
 
 import Pages.*;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +9,8 @@ public class PlaceOrderRegisterWhileCheckoutTest {
 
     private WebDriver driver;
     private String baseUrl ="https://automationexercise.com/";
+
+
 
 
 
@@ -28,13 +30,13 @@ public class PlaceOrderRegisterWhileCheckoutTest {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .enterUsernameAndEmailAndClickSignUp("safa" , "safa@test.com");
+                .enterUsernameAndEmailAndClickSignUp(TestData.username, TestData.password );
 
         new SignUpPage(driver)
-                .signUpNewAccount("Mr" , "12345678","mohamed" , "salah","test",
-                             "cairo", "1","cairo","cairo","165458","01212314648");
+                .signUpNewAccount("Mr" , TestData.password, TestData.firstName , TestData.lastName,TestData.company,
+                             TestData.country, "1", TestData.country, TestData.country , TestData.zipCode , TestData.mobileNumber);
 
-        new AccountCreatedPage(driver)
+        new AfterCreateAccountPage(driver)
                 .accountCreatedHeaderIsVisible()
                 .clickOnContinueButton()
                 .verifyLoggedInLabelIsVisible()
@@ -42,11 +44,12 @@ public class PlaceOrderRegisterWhileCheckoutTest {
                 .proceedToCheckoutWithoutLoggedInUser();
 
         new CheckoutPage(driver)
+                .checkTableHeadersArePresent(CheckoutPage.validTableHeaders)
                 .typeComment("amazing shopping")
                 .clickOnPlaceOrder();
 
         new PaymentPage(driver)
-                .enterYourCredentials("test","1649898","123","12","2026");
+                .enterYourCredentials("test",TestData.creditCardNumber,"123","12","2026");
 
         new AfterPaymentPage(driver)
                 .verifyAfterPaymentSuccessMessageIsDisplayed("Congratulations! Your order has been confirmed!");
@@ -55,7 +58,7 @@ public class PlaceOrderRegisterWhileCheckoutTest {
                 .clickOnTheDeleteLink();
 
         new AfterDeleteAccountPage(driver)
-                .deletedAccountTextIsDisplayed()
+                .deletedAccountHeaderIsDisplayed()
                 .clickOnContinueButton()
                 .checkSliderInHomePageIsVisible();
     }

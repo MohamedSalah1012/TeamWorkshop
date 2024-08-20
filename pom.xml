@@ -53,6 +53,13 @@
             <version>1.21.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+
 
     </dependencies>
          
@@ -67,6 +74,8 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>src/test/resources/testng/AddToCart.xml</suiteXmlFile>
                             <suiteXmlFile>src/test/resources/testng/RigsterRunners.xml</suiteXmlFile>
+                            <suiteXmlFile>src/test/resources/testng/RigsterRunners.xml</suiteXmlFile>
+                            <suiteXmlFile>src/test/resources/testng/Placeorder.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
