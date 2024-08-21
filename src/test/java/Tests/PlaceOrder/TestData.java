@@ -16,11 +16,8 @@ public class TestData {
                             password = faker.internet().emailAddress(),
                              country = faker.country().name(),
 
-
                             zipCode = faker.address().zipCode(),
                             creditCardNumber = faker.business().creditCardNumber(),
-
-
                             mobileNumber = "+2010" +  faker.number().digits(8);
 
 }

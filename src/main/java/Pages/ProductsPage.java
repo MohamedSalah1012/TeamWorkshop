@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class ProductsPage {
-    private  WebDriver driver;
+    private final WebDriver driver;
     private  Actions actions;
 
 
@@ -19,7 +19,7 @@ public class ProductsPage {
     }
 
 
-    /////// Locators ////////
+                                        /////// Locators ////////
 
 
     private final By allProductsArea      =   By.xpath("//div[@class='features_items']");
@@ -57,7 +57,7 @@ public class ProductsPage {
     }
 
 
-    ///////// Validations ///////
+
 
     @Description("check that  'All products' text is displayed ")
     public ProductsPage allProdcutsTextIsVisible(){

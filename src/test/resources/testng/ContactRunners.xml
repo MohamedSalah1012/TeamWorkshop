@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="classes">
     <test name="Tests">
         <classes>
-            <class name="Tests.ContactUsForm"/>
+            <class name="Tests.Random.ContactUsForm"/>
         </classes>
     </test>
 </suite>
