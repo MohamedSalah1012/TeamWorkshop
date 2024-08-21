@@ -1,6 +1,6 @@
 
 
-# Project Name:  Automation Practice Level Up👋   
+# Project Name:  Automation Practice Level Up👋     
  
 
 ## Description:
