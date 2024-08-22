@@ -58,11 +58,24 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-
-
-
     </dependencies>
-         
+
+    <profiles>
+        <profile>
+            <id>chrome</id>
+            <properties>
+                <browser>chrome</browser>
+            </properties>
+        </profile>
+        <profile>
+            <id>firefox</id>
+            <properties>
+                <browser>firefox</browser>
+            </properties>
+        </profile>
+    </profiles>
+
+
     <build>
         <pluginManagement>
             <plugins>
@@ -73,6 +86,10 @@
                     <configuration>
                         <reportFormat> plain</reportFormat>
                         <includes> **/*Test.java </includes>
+                        <parallel>classes</parallel> <!-- Run test classes in parallel -->
+                        <systemPropertyVariables>
+                            <browser>${browser}</browser> <!-- Pass browser parameter from command line -->
+                        </systemPropertyVariables>
                     </configuration>
                 </plugin>
             </plugins>

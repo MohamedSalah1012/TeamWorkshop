@@ -3,6 +3,7 @@ package Tests.PlaceOrder;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 public class PlaceOrderRegisterWhileCheckoutTest {
@@ -66,10 +67,17 @@ public class PlaceOrderRegisterWhileCheckoutTest {
 
 
     @BeforeClass
-    public void setUp(){
-        driver =new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(baseUrl);
+    @Parameters("browser")
+    public void setUp(String browser){
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.navigate().to(baseUrl);
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+            driver.manage().window().maximize();
+            driver.navigate().to(baseUrl);
+        }
     }
 
 

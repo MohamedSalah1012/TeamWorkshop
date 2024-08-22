@@ -3,9 +3,10 @@ import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
-public class NewRegister_Delete {
+public class NewRegister_DeleteTest {
 
     WebDriver driver;
     ChromeOptions chromeOptions;
@@ -47,12 +48,17 @@ public class NewRegister_Delete {
 
 
     @BeforeClass
-    public void setUp(){
-//        chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--headless");
-        driver =new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.navigate().to(HomePage.expectedHomePageUrl);
+    @Parameters("browser")
+    public void setUp(String browser){
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.navigate().to(HomePage.expectedHomePageUrl);
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+            driver.manage().window().maximize();
+            driver.navigate().to(HomePage.expectedHomePageUrl);
+        }
     }
 
 

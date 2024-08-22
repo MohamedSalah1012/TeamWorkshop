@@ -2,7 +2,7 @@
 <suite name="Suite" parallel="classes">
     <test name="Tests">
         <classes>
-            <class name="Tests.Register.NewRegister_Delete"/>
+            <class name="Tests.Register.NewRegister_DeleteTest"/>
         </classes>
     </test>
 </suite>
