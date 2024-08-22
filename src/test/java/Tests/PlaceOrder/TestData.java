@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 public class TestData {
 
 
-    protected static Faker faker = new Faker();
+    public static Faker faker = new Faker();
             static String username  = faker.name().username(),
 
                             firstName  = faker.name().firstName(),
@@ -13,7 +13,8 @@ public class TestData {
 
                             company = faker.company().name(),
 
-                            password = faker.internet().emailAddress(),
+                            emailAddress = faker.internet().emailAddress(),
+                            password = faker.internet().password(),
                              country = faker.country().name(),
 
                             zipCode = faker.address().zipCode(),

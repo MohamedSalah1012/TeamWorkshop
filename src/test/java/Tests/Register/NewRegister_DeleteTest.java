@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 public class NewRegister_DeleteTest {
 
     WebDriver driver;
-    ChromeOptions chromeOptions;
+//    ChromeOptions chromeOptions;
 
     @Test( testName = " Register as a new user and delete account ")
     public void newRegister(){
@@ -22,7 +22,7 @@ public class NewRegister_DeleteTest {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .enterUsernameAndEmailAndClickSignUp("new6" , "new6@user6.com" );
+                .enterUsernameAndEmailAndClickSignUp(TestData.username , TestData.emailAddress);
 
         new SignUpPage(driver)
                 .signUpNewAccount("Mr","12345678","mohamed"
@@ -48,17 +48,10 @@ public class NewRegister_DeleteTest {
 
 
     @BeforeClass
-    @Parameters("browser")
-    public void setUp(String browser){
-        if (browser.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.navigate().to(HomePage.expectedHomePageUrl);
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-            driver.navigate().to(HomePage.expectedHomePageUrl);
-        }
+    public void setUp(){
+        driver =new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(HomePage.expectedHomePageUrl);
     }
 
 

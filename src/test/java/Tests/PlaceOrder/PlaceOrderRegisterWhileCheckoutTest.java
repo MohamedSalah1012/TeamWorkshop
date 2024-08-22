@@ -31,7 +31,7 @@ public class PlaceOrderRegisterWhileCheckoutTest {
 
         new LoginPage(driver)
                 .newUserSignUpHeader_Is_Visible()
-                .enterUsernameAndEmailAndClickSignUp(TestData.username, TestData.password );
+                .enterUsernameAndEmailAndClickSignUp(TestData.username, TestData.emailAddress);
 
         new SignUpPage(driver)
                 .signUpNewAccount("Mr" , TestData.password, TestData.firstName , TestData.lastName,TestData.company,
@@ -67,17 +67,10 @@ public class PlaceOrderRegisterWhileCheckoutTest {
 
 
     @BeforeClass
-    @Parameters("browser")
-    public void setUp(String browser){
-        if (browser.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.navigate().to(baseUrl);
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-            driver.navigate().to(baseUrl);
-        }
+    public void setUp(){
+        driver =new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(HomePage.expectedHomePageUrl);
     }
 
 

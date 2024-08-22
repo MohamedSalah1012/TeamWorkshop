@@ -3,11 +3,11 @@ package Tests.Cart;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 public class VerifyCartCasesTest {
     WebDriver driver;
+    String baseUrl ="https://automationexercise.com/";
 
     @Test(testName = "Verify adding products in cart")
     public void addProductInCart(){
@@ -44,17 +44,10 @@ public class VerifyCartCasesTest {
 
 
     @BeforeMethod
-    @Parameters("browser")
-    public void setUp(String browser){
-        if (browser.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.navigate().to(HomePage.expectedHomePageUrl);
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
-            driver.manage().window().maximize();
-            driver.navigate().to(HomePage.expectedHomePageUrl);
-        }
+    public void setUp(){
+        driver =new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get(baseUrl);
     }
 
     @AfterMethod
