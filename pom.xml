@@ -71,12 +71,8 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>3.2.5</version>
                     <configuration>
-                        <suiteXmlFiles>
-                            <suiteXmlFile>src/test/resources/testng/AddToCart.xml</suiteXmlFile>
-                            <suiteXmlFile>src/test/resources/testng/RigsterRunners.xml</suiteXmlFile>
-                            <suiteXmlFile>src/test/resources/testng/RigsterRunners.xml</suiteXmlFile>
-                            <suiteXmlFile>src/test/resources/testng/Placeorder.xml</suiteXmlFile>
-                        </suiteXmlFiles>
+                        <reportFormat> plain</reportFormat>
+                        <includes> **/*Test.java </includes>
                     </configuration>
                 </plugin>
             </plugins>

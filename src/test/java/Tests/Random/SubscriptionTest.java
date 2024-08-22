@@ -29,9 +29,9 @@ public class SubscriptionTest {
 
     @BeforeClass
     public void setUp(){
-        chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-        driver =new ChromeDriver(chromeOptions);
+//        chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--headless");
+        driver =new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(baseUrl);
     }
