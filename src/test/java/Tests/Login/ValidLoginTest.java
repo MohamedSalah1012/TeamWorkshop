@@ -4,6 +4,7 @@ import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 public class ValidLoginTest {
@@ -40,12 +41,17 @@ public class ValidLoginTest {
 
 
     @BeforeClass
-    public void setUp(){
-        chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
-        driver =new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
-        driver.get(baseUrl);
+    @Parameters("browser")
+    public void setUp(String browser){
+        if (browser.equalsIgnoreCase("chrome")) {
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.navigate().to(HomePage.expectedHomePageUrl);
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            driver = new FirefoxDriver();
+            driver.manage().window().maximize();
+            driver.navigate().to(HomePage.expectedHomePageUrl);
+        }
     }
 
     @AfterClass
