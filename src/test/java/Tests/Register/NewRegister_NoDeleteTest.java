@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
-public class NewRegister_NoDelete {
+public class NewRegister_NoDeleteTest {
 
     WebDriver driver;
     ChromeOptions chromeOptions;

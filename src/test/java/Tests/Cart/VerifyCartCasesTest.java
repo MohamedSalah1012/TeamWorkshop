@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
-public class VerifyCartCases {
+public class VerifyCartCasesTest {
     WebDriver driver;
     String baseUrl ="https://automationexercise.com/";
 

@@ -21,7 +21,6 @@
             <version>4.23.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -92,6 +91,7 @@
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
+
             </plugins>
         </pluginManagement>
     </build>
