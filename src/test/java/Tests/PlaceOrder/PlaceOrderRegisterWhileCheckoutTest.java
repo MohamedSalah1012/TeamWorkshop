@@ -50,7 +50,7 @@ public class PlaceOrderRegisterWhileCheckoutTest {
                 .clickOnPlaceOrder();
 
         new PaymentPage(driver)
-                .enterYourCredentials("test",TestData.creditCardNumber,"123","12","2026");
+                .enterYourCredentials("test",TestData.password,"123","12","2026");
 
         new AfterPaymentPage(driver)
                 .verifyAfterPaymentSuccessMessageIsDisplayed("Congratulations! Your order has been confirmed!");
