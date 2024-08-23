@@ -1,5 +1,5 @@
 package Pages;
-import Bots.ActionBot;
+import Bots.Bot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -37,11 +37,11 @@ public class HomePage {
     }
 
     public HomePage checkSliderInHomePageIsVisible(){
-        ActionBot.isVisible(driver,silder);
+        Bot.isVisible(driver,silder);
         return this;
     }
     public HomePage verifyLoggedInLabelIsVisible(){
-        ActionBot.isVisible(driver , loggedInAsLabel);
+        Bot.isVisible(driver , loggedInAsLabel);
         return this;
     }
 
@@ -49,29 +49,29 @@ public class HomePage {
                                         //////// Links In Navbar//////////
 
     public LoginPage clickOnSignupLoginLinkButton(){
-        ActionBot.clicking(driver, signUpLink);
+        Bot.clicking(driver, signUpLink);
         return  new LoginPage(driver);
     }
     public ProductsPage clickOnTheProductsLink(){
-        ActionBot.clicking(driver , productsPageLink);
+        Bot.clicking(driver , productsPageLink);
         return new ProductsPage(driver);
     }
 
 
     public CartPage clickOnTheCartLink(){
-        ActionBot.clicking(driver , cartLink);
+        Bot.clicking(driver , cartLink);
         return new CartPage(driver);
     }
     public ContactUsPage clickOnContactUsLink(){
-        ActionBot.clicking(driver, contactUsLink);
+        Bot.clicking(driver, contactUsLink);
         return new ContactUsPage(driver);
     }
     public AfterDeleteAccountPage clickOnTheDeleteLink(){
-        ActionBot.clicking(driver , deleteLink);
+        Bot.clicking(driver , deleteLink);
         return new AfterDeleteAccountPage(driver);
     }
     public TestCasesPage clickOnTestcasesLink(){
-        ActionBot.clicking(driver, testCasesLink);
+        Bot.clicking(driver, testCasesLink);
         return new TestCasesPage(driver);
     }
 
@@ -79,14 +79,14 @@ public class HomePage {
 
     //////// Methods//////////
     public HomePage verifyTextSubscriptionAndSubscribe(String email){
-        ActionBot.isVisible(driver , subscriptionHeader);
-        ActionBot.enterText(driver , subscriptionInput , email );
-        ActionBot.clicking(driver , submitSubsriptionButton);
+        Bot.isVisible(driver , subscriptionHeader);
+        Bot.enterText(driver , subscriptionInput , email );
+        Bot.clicking(driver , submitSubsriptionButton);
         return this;
     }
 
     public ProductDetailsPage clickOnviewProductButton(int productOrder){
-        ActionBot.clicking(driver,viewProductButton(productOrder));
+        Bot.clicking(driver,viewProductButton(productOrder));
         return new ProductDetailsPage(driver);
     }
 

@@ -1,5 +1,5 @@
 package Pages;
-import Bots.ActionBot;
+import Bots.Bot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,13 +34,13 @@ public class LoginPage {
                                         ///////// Validations ////////
 
     public LoginPage newUserSignUpHeader_Is_Visible(){
-        ActionBot.isVisible(driver , newUserSignUpHeader);
+        Bot.isVisible(driver , newUserSignUpHeader);
         return this;
     }
 
 
     public LoginPage loginHeader_Is_Visible(){
-        ActionBot.isVisible(driver , loginHeader);
+        Bot.isVisible(driver , loginHeader);
         return this;
     }
 
@@ -48,14 +48,14 @@ public class LoginPage {
 
 
     public LoginPage loginWithValidCredentials(String invalidEmail , String InvalidPass){
-        ActionBot.enterText(driver , email_ForLogin , invalidEmail);
-        ActionBot.enterText(driver ,password_ForLogin ,InvalidPass);
-        ActionBot.clicking(driver, loginButton);
+        Bot.enterText(driver , email_ForLogin , invalidEmail);
+        Bot.enterText(driver ,password_ForLogin ,InvalidPass);
+        Bot.clicking(driver, loginButton);
         return this;
     }
 
     public LoginPage checkAlertMessageIsDisplayed(){
-        ActionBot.isVisible(driver , alertMsg_InvalidLogin);
+        Bot.isVisible(driver , alertMsg_InvalidLogin);
         return this;
     }
 
@@ -63,9 +63,9 @@ public class LoginPage {
 
 
     public SignUpPage enterUsernameAndEmailAndClickSignUp(String username , String email){
-        ActionBot.enterText(driver , userNameForNewUser , username);
-        ActionBot.enterText( driver , emailForNewUSer ,email );
-        ActionBot.clicking(driver , signUpButton);
+        Bot.enterText(driver , userNameForNewUser , username);
+        Bot.enterText( driver , emailForNewUSer ,email );
+        Bot.clicking(driver , signUpButton);
         return new SignUpPage(driver);
     }
 }

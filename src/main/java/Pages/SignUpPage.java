@@ -1,5 +1,5 @@
 package Pages;
-import Bots.ActionBot;
+import Bots.Bot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -37,7 +37,7 @@ public class SignUpPage {
 
 
     public SignUpPage signUpFormLabel_IsVisible(){
-        ActionBot.isVisible(driver , enterAccountInfoLabel);
+        Bot.isVisible(driver , enterAccountInfoLabel);
         return this;
     }
 
@@ -47,20 +47,20 @@ public class SignUpPage {
 
 
     public AfterCreateAccountPage signUpNewAccount(String titleGender, String password, String fname, String lname, String company , String address, String country, String state , String city , String zipcode, String mobilenumber){
-        ActionBot.clicking(driver , title(titleGender));
-        ActionBot.enterText(driver ,passwordField, password);
-        ActionBot.clicking(driver,newsLetterCheckbox);
-        ActionBot.clicking(driver,receiveSpecialOfferCheckbox);
-        ActionBot.enterText(driver,firstNameField,fname);
-        ActionBot.enterText(driver,lastName , lname );
-        ActionBot.enterText(driver,companyField , company);
-        ActionBot.enterText(driver,address1 , address);
-        ActionBot.findCountryDropdownList( driver , countryDropDownMenu).selectByIndex(1);
-        ActionBot.enterText(driver ,stateField ,state);
-        ActionBot.enterText(driver , cityField , city);
-        ActionBot.enterText(driver , zipcodeField , zipcode);
-        ActionBot.enterText(driver , mobileNumberField ,mobilenumber);
-        ActionBot.clicking(driver , createAccountButton );
+        Bot.clicking(driver , title(titleGender));
+        Bot.enterText(driver ,passwordField, password);
+        Bot.clicking(driver,newsLetterCheckbox);
+        Bot.clicking(driver,receiveSpecialOfferCheckbox);
+        Bot.enterText(driver,firstNameField,fname);
+        Bot.enterText(driver,lastName , lname );
+        Bot.enterText(driver,companyField , company);
+        Bot.enterText(driver,address1 , address);
+        Bot.findCountryDropdownList( driver , countryDropDownMenu).selectByIndex(1);
+        Bot.enterText(driver ,stateField ,state);
+        Bot.enterText(driver , cityField , city);
+        Bot.enterText(driver , zipcodeField , zipcode);
+        Bot.enterText(driver , mobileNumberField ,mobilenumber);
+        Bot.clicking(driver , createAccountButton );
         return new AfterCreateAccountPage(driver);
     }
 

@@ -1,6 +1,6 @@
 package Pages;
 
-import Bots.ActionBot;
+import Bots.Bot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -22,12 +22,12 @@ public class AfterCreateAccountPage {
 
                                 /////////// Methods ////////////
     public AfterCreateAccountPage accountCreatedHeaderIsVisible(){
-        ActionBot.isVisible(driver ,accountCreatedHeader);
+        Bot.isVisible(driver ,accountCreatedHeader);
         return this;
     }
 
     public HomePage clickOnContinueButton(){
-        ActionBot.clicking(driver ,continueButton);
+        Bot.clicking(driver ,continueButton);
         return new HomePage(driver);
     }
 }
