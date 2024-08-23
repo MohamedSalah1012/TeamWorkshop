@@ -1,9 +1,8 @@
 package Pages;
 
-import Bots.ActionBot;
+import Bots.Bot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class ContactUsPage {
@@ -38,12 +37,12 @@ public class ContactUsPage {
                             /////////// Validations //////////
 
     public  ContactUsPage getInTouchHeaderIsVisible(){
-        ActionBot.isVisible(driver,getInTouchHeader);
+        Bot.isVisible(driver,getInTouchHeader);
         return this;
     }
 
     public  ContactUsPage successMessageIsVisible(){
-        ActionBot.isVisible(driver,successMessage);
+        Bot.isVisible(driver,successMessage);
         return this;
     }
 
@@ -51,20 +50,20 @@ public class ContactUsPage {
 
                                 /////////// Methods //////////
     public ContactUsPage fillContactUsFormAndSubmit(String name, String email, String subject , String message , String file){
-        ActionBot.enterText(driver,nameField,name);
-        ActionBot.enterText(driver, emailField ,email);
-        ActionBot.enterText(driver,  subjectField , subject);
-        ActionBot.enterText(driver , messageBox ,message);
-        ActionBot.enterText(driver,uploadButton ,file);
-        ActionBot.clicking(driver , submitButton);
-        ActionBot.acceptAlert(driver);
+        Bot.enterText(driver,nameField,name);
+        Bot.enterText(driver, emailField ,email);
+        Bot.enterText(driver,  subjectField , subject);
+        Bot.enterText(driver , messageBox ,message);
+        Bot.enterText(driver,uploadButton ,file);
+        Bot.clicking(driver , submitButton);
+        Bot.acceptAlert(driver);
         return this;
     }
 
 
     @Description("By clicking this button, you will be redirected to the home page")
     public HomePage clickOnTheHomePageButton(){
-        ActionBot.clicking(driver,homePageButton);
+        Bot.clicking(driver,homePageButton);
         return new HomePage(driver);
     }
 

@@ -1,5 +1,5 @@
 package Pages;
-import Bots.ActionBot;
+import Bots.Bot;
 import org.openqa.selenium.*;
 import org.testng.Assert;
 
@@ -46,17 +46,17 @@ public class CartPage {
                                             //////////// Validations //////////////////
 
     public CartPage verifyAddressDetailsHeader(){
-        ActionBot.isVisible(driver , addressDetailsHeader);
+        Bot.isVisible(driver , addressDetailsHeader);
         return this;
     }
 
     public CartPage verifyReviewYourOrderHeader(){
-        ActionBot.isVisible(driver , reviewYourOrderHeader);
+        Bot.isVisible(driver , reviewYourOrderHeader);
         return this;
     }
 
     public CartPage verifyShoppingCartText(){
-        ActionBot.isVisible(driver,shoppingCart);
+        Bot.isVisible(driver,shoppingCart);
         return this;
     }
 
@@ -87,16 +87,16 @@ public class CartPage {
        return this;
     }
     public CartPage deleteItemByOrder(int itemOrder){
-        ActionBot.clicking(driver,deleteProduct(itemOrder));
+        Bot.clicking(driver,deleteProduct(itemOrder));
         return this;
     }
     public CartPage proceedToCheckoutWithoutLoggedInUser(){
-        ActionBot.clicking(driver,checkOutButton);
+        Bot.clicking(driver,checkOutButton);
         return this;
     }
 
     public LoginPage clickOnRegisterLink(){
-        ActionBot.clicking(driver ,registerOrLogin );
+        Bot.clicking(driver ,registerOrLogin );
         return new LoginPage(driver);
     }
 }

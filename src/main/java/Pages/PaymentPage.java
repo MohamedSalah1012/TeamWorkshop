@@ -1,6 +1,6 @@
 package Pages;
 
-import Bots.ActionBot;
+import Bots.Bot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -29,12 +29,12 @@ public class PaymentPage {
 
 
     public PaymentPage enterYourCredentials(String name , String cardNumber , String cvc , String expiryMonth, String expiryYear) {
-        ActionBot.enterText(driver, nameOnCard, name);
-        ActionBot.enterText(driver, carNumberInput, cardNumber);
-        ActionBot.enterText(driver , cvcInput ,cvc );
-        ActionBot.enterText(driver , expiryMonthInput , expiryMonth);
-        ActionBot.enterText(driver , expiryYearInput, expiryYear);
-        ActionBot.clicking(driver , payAndConfirmOrderButton);
+        Bot.enterText(driver, nameOnCard, name);
+        Bot.enterText(driver, carNumberInput, cardNumber);
+        Bot.enterText(driver , cvcInput ,cvc );
+        Bot.enterText(driver , expiryMonthInput , expiryMonth);
+        Bot.enterText(driver , expiryYearInput, expiryYear);
+        Bot.clicking(driver , payAndConfirmOrderButton);
         return this;
     }
 

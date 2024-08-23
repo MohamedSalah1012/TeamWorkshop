@@ -1,6 +1,6 @@
 package Pages;
 
-import Bots.ActionBot;
+import Bots.Bot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,13 +31,13 @@ public class ProductDetailsPage {
 
     @Description("check that Product name  is displayed ")
     public ProductDetailsPage productNameIsVisible(){
-        ActionBot.isVisible(driver, productName);
+        Bot.isVisible(driver, productName);
         return this;
     }
 
     @Description("check that Category name is displayed ")
     public ProductDetailsPage categoryNameIsVisible(){
-        ActionBot.isVisible(driver, categoryName);
+        Bot.isVisible(driver, categoryName);
         return this;
     }
 
@@ -51,17 +51,17 @@ public class ProductDetailsPage {
 
 
     public ProductDetailsPage clickOnAddToCart(){
-        ActionBot.clicking(driver,addToCartButton);
+        Bot.clicking(driver,addToCartButton);
         return new ProductDetailsPage(driver);
     }
 
     public ProductDetailsPage clickOnContinueShopping(){
-        ActionBot.clicking(driver,continueShopping);
+        Bot.clicking(driver,continueShopping);
         return new ProductDetailsPage(driver);
     }
 
     public CartPage clickOnviewCart(){
-        ActionBot.clicking(driver,viewCartButton);
+        Bot.clicking(driver,viewCartButton);
         return new CartPage(driver);
     }
 

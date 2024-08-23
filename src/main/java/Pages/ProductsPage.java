@@ -1,6 +1,6 @@
 package Pages;
 
-import Bots.ActionBot;
+import Bots.Bot;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -61,13 +61,13 @@ public class ProductsPage {
 
     @Description("check that  'All products' text is displayed ")
     public ProductsPage allProdcutsTextIsVisible(){
-        ActionBot.isVisible(driver, allProductsText);
+        Bot.isVisible(driver, allProductsText);
         return this;
     }
 
     @Description("check that   'All products' area is displayed ")
     public ProductsPage allProdcutsAreaIsVisible(){
-        ActionBot.isVisible(driver, allProductsArea);
+        Bot.isVisible(driver, allProductsArea);
         return this;
     }
 
@@ -79,14 +79,14 @@ public class ProductsPage {
 
     @Description(" Enter a product name in the 'search input & click on search button  ")
     public SearchResultPage searchForProduct(String product){
-        ActionBot.enterText(driver, searchInput, product);
-        ActionBot.clicking(driver, searchButton);
+        Bot.enterText(driver, searchInput, product);
+        Bot.clicking(driver, searchButton);
         return new SearchResultPage(driver);
     }
 
     @Description(" Enter a product name in the 'search input & click on search button  ")
     public ProductDetailsPage clickOnViewProductButton() {
-        ActionBot.clicking(driver ,viewProductButton);
+        Bot.clicking(driver ,viewProductButton);
         return new ProductDetailsPage(driver);
     }
 
@@ -101,17 +101,17 @@ public class ProductsPage {
 
     @Description(" Add product to cart by click directly on add to cart")
     public ProductsPage directClickAddProductToCart(int productOrder){
-      ActionBot.clicking(driver,addTocartButton(productOrder));
+      Bot.clicking(driver,addTocartButton(productOrder));
       return this;
     }
 
     public ProductsPage clickOnContinueShopping() {
-        ActionBot.clicking(driver ,continueShoppingButton);
+        Bot.clicking(driver ,continueShoppingButton);
         return new ProductsPage(driver);
     }
 
     public CartPage clickOnViewCart() {
-        ActionBot.clicking(driver ,viewCartButton);
+        Bot.clicking(driver ,viewCartButton);
         return new CartPage(driver);
     }
 

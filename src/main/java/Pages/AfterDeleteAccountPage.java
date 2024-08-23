@@ -1,6 +1,6 @@
 package Pages;
 
-import Bots.ActionBot;
+import Bots.Bot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -21,14 +21,14 @@ public class AfterDeleteAccountPage {
                                     /////////// Validations //////////
 
     public AfterDeleteAccountPage deletedAccountHeaderIsDisplayed(){
-        ActionBot.isVisible(driver , accountDeletedHeader);
+        Bot.isVisible(driver , accountDeletedHeader);
         return this;
     }
 
 
 
     public HomePage clickOnContinueButton(){
-        ActionBot.clicking(driver , continueButton);
+        Bot.clicking(driver , continueButton);
         return new HomePage(driver);
     }
 
