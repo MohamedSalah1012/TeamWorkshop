@@ -2,11 +2,15 @@ package Tests.Login;
 
 import Bots.Bot;
 import Pages.*;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+
+import java.io.FileNotFoundException;
 
 public class ValidLoginTest {
 
@@ -18,7 +22,8 @@ public class ValidLoginTest {
 
 
 
-
+    @Epic("Login")
+    @Feature("Invalid Login")
     @Test(testName = "Valid Login with Valid email and Valid password" )
     public void invalidLogin(){
 
@@ -53,11 +58,13 @@ public class ValidLoginTest {
 
     @AfterClass
     public void tearDown() {
+        if (driver!=null){
         driver.quit();
+    }
     }
 
    @AfterMethod
-    public void takeScreenShotOnFailure(ITestResult result){
+    public void takeScreenShotOnFailure(ITestResult result) throws FileNotFoundException {
         Bot.handleScreenShot(driver , result);
    }
 
