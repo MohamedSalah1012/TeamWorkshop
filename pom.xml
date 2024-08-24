@@ -12,7 +12,6 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <aspectj.version>1.9.22.1</aspectj.version>
     </properties>
 
     <dependencies>
@@ -99,7 +98,6 @@
                             <browser>${browser}</browser> <!-- Pass browser parameter from command line -->
                         </systemPropertyVariables>
 
-                        <argLine> -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"    </argLine>
                     </configuration>
                 </plugin>
                 <plugin>
