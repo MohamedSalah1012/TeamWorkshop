@@ -12,6 +12,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <aspectj.version>1.9.22.1</aspectj.version>
     </properties>
 
     <dependencies>
@@ -57,6 +58,13 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.24.0</version>
+        </dependency>
+
     </dependencies>
 
     <profiles>
@@ -87,11 +95,26 @@
                         <includes> **/*Test.java </includes>
                         <parallel>classes</parallel> <!-- Run test classes in parallel -->
                         <systemPropertyVariables>
+                            <!--suppress UnresolvedMavenProperty -->
                             <browser>${browser}</browser> <!-- Pass browser parameter from command line -->
                         </systemPropertyVariables>
+
+                        <argLine> -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"    </argLine>
                     </configuration>
                 </plugin>
-
+                <plugin>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-maven</artifactId>
+                    <version>2.13.0</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>report</goal>
+                                <goal>serve</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>

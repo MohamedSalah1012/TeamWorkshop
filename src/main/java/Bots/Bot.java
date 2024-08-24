@@ -1,12 +1,12 @@
 package Bots;
+import io.qameta.allure.Allure;
 import jdk.jfr.Description;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -18,13 +18,15 @@ public class Bot {
     private static WebDriver driver ;
 
 
-    public static void handleScreenShot(WebDriver driver , ITestResult result){
+    public static void handleScreenShot(WebDriver driver , ITestResult result) throws FileNotFoundException {
         if (ITestResult.FAILURE == result.getStatus()) {
-            var cam = (TakesScreenshot) driver;
-            File screenshot = cam.getScreenshotAs(OutputType.FILE);
+            TakesScreenshot cam = (TakesScreenshot) driver;
+            byte[] screenshot = cam.getScreenshotAs(OutputType.BYTES);
+            Allure.addAttachment("Screenshot On Failure", new ByteArrayInputStream(screenshot));
             String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy  HH-mm-ss"));
             try {
-                Files.move(screenshot.toPath(), new File("Screenshots/" + result.getName() + " " + timestamp + ".png").toPath());
+                FileOutputStream out = new FileOutputStream("Screenshots/" + result.getName() + " " + timestamp + ".png");
+                out.write(screenshot);
             } catch (IOException e) {
                 e.printStackTrace();
             }
