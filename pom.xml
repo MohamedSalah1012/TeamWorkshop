@@ -83,7 +83,7 @@
 
 
     <build>
-        <pluginManagement>
+
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -97,9 +97,9 @@
                             <!--suppress UnresolvedMavenProperty -->
                             <browser>${browser}</browser> <!-- Pass browser parameter from command line -->
                         </systemPropertyVariables>
-
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>io.qameta.allure</groupId>
                     <artifactId>allure-maven</artifactId>
@@ -114,10 +114,5 @@
                     </executions>
                 </plugin>
             </plugins>
-        </pluginManagement>
     </build>
-
-
-
-
 </project>
