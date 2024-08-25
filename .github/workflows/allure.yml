@@ -1,0 +1,11 @@
+- name: Run Tests
+  run: mvn clean test
+
+- name: Generate Allure Report
+  run: mvn allure:report
+
+- name: Publish Allure Report
+  uses: actions/upload-artifact@v2
+  with:
+    name: allure-report
+    path: target/site/allure-maven-plugin
