@@ -18,20 +18,35 @@ public class Bot {
     private static WebDriver driver ;
 
 
+
+
     public static void handleScreenShot(WebDriver driver , ITestResult result) throws FileNotFoundException {
+        TakesScreenshot cam = (TakesScreenshot) driver;
+        byte[] screenshot = cam.getScreenshotAs(OutputType.BYTES);
+        String status;
+        String directory;
+
         if (ITestResult.FAILURE == result.getStatus()) {
-            TakesScreenshot cam = (TakesScreenshot) driver;
-            byte[] screenshot = cam.getScreenshotAs(OutputType.BYTES);
-            Allure.addAttachment("Screenshot On Failure", new ByteArrayInputStream(screenshot));
-            String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy  HH-mm-ss"));
-            try {
-                FileOutputStream out = new FileOutputStream("Screenshots/" + result.getName() + " " + timestamp + ".png");
-                out.write(screenshot);
-            } catch (IOException e) {
-                e.printStackTrace();
+            status = "Failure";
+            directory = "Screenshots/failed/";
+        } else if (ITestResult.SUCCESS == result.getStatus()) {
+            status = "Success";
+            directory = "Screenshots/success/";
+        } else if (ITestResult.SKIP == result.getStatus()) {
+            status = "Skip";
+            directory = "Screenshots/skip/";
+        } else {
+            return; // Ignore other statuses
+        }
+        Allure.addAttachment("Screenshot On " + status, new ByteArrayInputStream(screenshot));
+        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy  HH-mm-ss"));
+        try (FileOutputStream out = new FileOutputStream(directory + result.getName() + " " + timestamp + ".png")) {
+            out.write(screenshot);
+        } catch (IOException e) {
+            e.printStackTrace();
             }
         }
-    }
+
 
 
 

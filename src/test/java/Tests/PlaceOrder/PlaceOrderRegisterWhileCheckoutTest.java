@@ -1,10 +1,14 @@
 package Tests.PlaceOrder;
 
+import Bots.Bot;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
+
+import java.io.FileNotFoundException;
 
 public class PlaceOrderRegisterWhileCheckoutTest {
 
@@ -74,9 +78,16 @@ public class PlaceOrderRegisterWhileCheckoutTest {
     }
 
 
+    @AfterMethod
+    public void takeScreenShotOnFailure(ITestResult result) throws FileNotFoundException {
+        Bot.handleScreenShot(driver , result);
+    }
+
 
     @AfterClass
     public void tearDown(){
-        driver.quit();
+        if (driver != null ){
+            driver.quit();
+        }
     }
 }
