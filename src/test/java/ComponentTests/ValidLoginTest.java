@@ -1,14 +1,19 @@
-package Tests.Login;
+package ComponentTests;
 
 import Bots.Bot;
-import Pages.*;
+import Pages.AfterDeleteAccountPage;
+import Pages.HomePage;
+import Pages.LoginPage;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 import java.io.FileNotFoundException;
 

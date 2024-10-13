@@ -1,12 +1,18 @@
-package Tests.Register;
+package SmokeTests;
 
-import Pages.*;
+import Pages.AfterCreateAccountPage;
+import Pages.HomePage;
+import Pages.LoginPage;
+import Pages.SignUpPage;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
 
 public class NewRegister_NoDeleteTest {
 

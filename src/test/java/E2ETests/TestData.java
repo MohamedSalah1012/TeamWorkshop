@@ -1,4 +1,4 @@
-package Tests.PlaceOrder;
+package E2ETests;
 
 import com.github.javafaker.Faker;
 

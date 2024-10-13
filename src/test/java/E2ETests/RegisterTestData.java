@@ -1,11 +1,11 @@
-package Tests.Register;
+package E2ETests;
 
 import com.github.javafaker.Faker;
 
-public class TestData {
+public class RegisterTestData {
 
     public static Faker faker = new Faker();
-    static String username  = faker.name().username(),
+    public static String username  = faker.name().username(),
 
                 firstName  = faker.name().firstName(),
                 lastName = faker.name().lastName(),

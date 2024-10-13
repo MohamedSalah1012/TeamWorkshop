@@ -1,4 +1,4 @@
-package Tests.Login;
+package ComponentTests;
 import Pages.*;
 import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;

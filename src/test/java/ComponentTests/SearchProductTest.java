@@ -1,4 +1,4 @@
-package Tests.Random;
+package ComponentTests;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

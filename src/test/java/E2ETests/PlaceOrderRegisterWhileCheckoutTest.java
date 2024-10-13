@@ -1,10 +1,9 @@
-package Tests.PlaceOrder;
+package E2ETests;
 
 import Bots.Bot;
 import Pages.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 

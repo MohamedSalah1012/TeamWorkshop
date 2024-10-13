@@ -1,4 +1,4 @@
-package Tests.Cart;
+package E2ETests;
 
 import Pages.*;
 import org.openqa.selenium.WebDriver;
